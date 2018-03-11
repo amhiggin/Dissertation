@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2018.2.12)  11 MAR 2018 14:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.2.12)  11 MAR 2018 16:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -55,10 +55,10 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: dvips.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/dvips.def
-File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
@@ -69,11 +69,8 @@ Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver file: dvips.def on input line 147.
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
-File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
-))
+Package color Info: Driver file: pdftex.def on input line 147.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/anysize/anysize.sty
 Package: anysize 1994/08/13 setting margin sizes
 
@@ -195,7 +192,7 @@ Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
+Package pdftexcmds Info: \pdfdraftmode found.
 Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
 Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
 )
@@ -265,20 +262,12 @@ LaTeX Info: Redefining \pageref on input line 6432.
 \c@Hfootnote=\count115
 )
 
-Package hyperref Message: Driver (default): hdvips.
+Package hyperref Message: Driver (autodetected): hpdftex.
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hdvips.def
-File: hdvips.def 2017/03/14 v6.85a Hyperref driver for dvips
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pdfmark.def
-File: pdfmark.def 2017/03/14 v6.85a Hyperref definitions for pdfmark specials
-\pdf@docset=\toks20
-\pdf@box=\box28
-\pdf@toks=\toks21
-\pdf@defaulttoks=\toks22
-\HyField@AnnotCount=\count116
-\Fld@listcount=\count117
-\c@bookmark@seq@number=\count118
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2017/03/14 v6.85a Hyperref driver for pdfTeX
+\Fld@listcount=\count116
+\c@bookmark@seq@number=\count117
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
@@ -286,26 +275,26 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip49
-))
+)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count119
-\lst@gtempboxa=\box29
-\lst@token=\toks23
-\lst@length=\count120
+\lst@mode=\count118
+\lst@gtempboxa=\box28
+\lst@token=\toks20
+\lst@length=\count119
 \lst@currlwidth=\dimen129
-\lst@column=\count121
-\lst@pos=\count122
+\lst@column=\count120
+\lst@pos=\count121
 \lst@lostspace=\dimen130
 \lst@width=\dimen131
-\lst@newlines=\count123
-\lst@lineno=\count124
+\lst@newlines=\count122
+\lst@lineno=\count123
 \lst@maxwidth=\dimen132
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count125
-\lst@skipnumbers=\count126
-\lst@framebox=\box30
+\c@lstnumber=\count124
+\lst@skipnumbers=\count125
+\lst@framebox=\box29
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
@@ -330,6 +319,37 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 149.
 LaTeX Font Info:    ... okay on input line 149.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 149.
 LaTeX Font Info:    ... okay on input line 149.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count126
+\scratchdimen=\dimen133
+\scratchbox=\box30
+\nofMPsegments=\count127
+\nofMParguments=\count128
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count129
+\MPscratchDim=\dimen134
+\MPnumerator=\count130
+\makeMPintoPDFobject=\count131
+\everyMPtoPDFconversion=\toks22
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
@@ -343,7 +363,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count127
+\c@section@level=\count132
 )
 LaTeX Info: Redefining \ref on input line 149.
 LaTeX Info: Redefining \pageref on input line 149.
@@ -353,14 +373,10 @@ LaTeX Info: Redefining \nameref on input line 149.
 \@outlinefile=\write3
 \openout3 = `thesis.out'.
 
+\c@lstlisting=\count133
+ [1
 
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
-\c@lstlisting=\count128
-[1
-
-]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 153--153
 
  []
@@ -386,88 +402,425 @@ Underfull \hbox (badness 10000) in paragraph at lines 155--155
 
 ] (./thesis.toc [6
 
-])
+] [7])
 \tf@toc=\write4
 \openout4 = `thesis.toc'.
 
- [7] (./thesis.lot)
+ [8] (./thesis.lot)
 \tf@lot=\write5
 \openout5 = `thesis.lot'.
 
- [8
+ [9
 
 
 ] (./thesis.lof)
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [9
+
+[10
 
 
 ]
 \openout2 = `chapter1.aux'.
 
-
-(./chapter1.tex
+ (./chapter1.tex
 Chapter 1.
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ì in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+[1
 
-LaTeX Warning: File `image.png' not found on input line 15.
+
+]
+
+LaTeX Warning: File `image.png' not found on input line 36.
 
 
-! LaTeX Error: File `image.png' not found.
+! Package pdftex.def Error: File `image.png' not found: using draft setting.
 
-See the LaTeX manual or LaTeX Companion for explanation.
+See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.15 ... will misinterpret the figure!}{image.png}
+l.36 ... will misinterpret the figure!}{image.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-
-! LaTeX Error: Cannot determine size of graphic in image.png (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.15 ... will misinterpret the figure!}{image.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: image.png Graphic file (type eps)
-<image.png>) [1
-
-
-] [2]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ì in font cmr12!
+[2]) [3]
 \openout2 = `chapter2.aux'.
 
  (./chapter2.tex
 Chapter 2.
 
-Package natbib Warning: Citation `Andrew2013empirical' on page 3 undefined on i
+Package natbib Warning: Citation `Andrew2013empirical' on page 4 undefined on i
 nput line 10.
 
 
-Package natbib Warning: Citation `Asghari2015Economics' on page 3 undefined on 
+Package natbib Warning: Citation `Asghari2015Economics' on page 4 undefined on 
 input line 10.
 
-[3
+[4
 
 
 
 ]
 
+Package natbib Warning: Citation `Andrew2013empirical' on page 5 undefined on i
+nput line 39.
+
+
+Package natbib Warning: Citation `Asghari2015Economics' on page 5 undefined on 
+input line 39.
+
+[5]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.52 \bullet
+             Distributed Denial of Service (DDoS)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.53 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.56 \bullet
+             Click fraud
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.57 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.60 \bullet
+             Extortion
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.61 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.64 \bullet
+             Spambots
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.65 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.66 \bullet
+             Password-cracking
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.67 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.70 \bullet
+             Bitcoin mining
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.71 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+[6]
+! Misplaced alignment tab character &.
+l.96 ...nder Lance Spitzner defines honeypots as &
+                                                  quot;a security resource w...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.96 ...oneypots as &quot;a security resource who&
+                                                  #39;s value lies in being ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.96 ...neypots as &quot;a security resource who&#
+                                                  39;s value lies in being p...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Misplaced alignment tab character &.
+l.96 ... in being probed, attacked or compromised&
+                                                  quot; [3]. They are catego...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+[7]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.100 \bullet
+              Decoys
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.101 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.105 \bullet
+              Sensors
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.106 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+[8]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.118 \bullet
+              Mimic existing systems
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.119 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.120 \bullet
+              Inside the network
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.121 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.122 \bullet
+              Extensive Logging Potential
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.123 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.124 \bullet
+              Goal-oriented
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.125 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.126 \bullet
+              Few False Positives
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.127 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ì in font cmr12!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.130 \bullet
+              Offensive and Defensive
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.131 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+[9]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 142.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 142.
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+ [10]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+ [11] [12]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ì in font cmr12!
+
+
+Package natbib Warning: Citation `Andrew2013empirical' on page 13 undefined on 
+input line 233.
+
+
+Package natbib Warning: Citation `Asghari2015Economics' on page 13 undefined on
+ input line 233.
+
+[13]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+ [14]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ò in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ≠ in font cmr12!
+ [15]
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [4] [5]
+) [16] [17]
 \openout2 = `chapter3.aux'.
 
  (./chapter3.tex
 Chapter 3.
-) [6
+) [18
 
 
 
@@ -478,7 +831,7 @@ Chapter 3.
 Chapter 4.
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 11.
-(./snippet.py)) [7
+(./snippet.py)) [19
 
 
 
@@ -487,39 +840,32 @@ nput line 11.
 
  (./chapter5.tex
 Chapter 5.
-
-! LaTeX Error: Cannot determine size of graphic in measurements.png (no Boundin
-gBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 ...he figure to the reader}{measurements.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: measurements.png Graphic file (type eps)
-<measurements.png>) [8
+<measurements.png, id=479, 1084.05pt x 351.3125pt>
+File: measurements.png Graphic file (type png)
+<use measurements.png>
+Package pdftex.def Info: measurements.png  used on input line 30. on input line
+ 30.
+Package pdftex.def Info: Requested size: 455.24411pt x 147.53415pt on input lin
+e 30.
+) [20
 
 
 
-] [9] [10]
+] [21 <./measurements.png>]
 \openout2 = `chapter6.aux'.
 
  (./chapter6.tex
 Chapter 6.
-) [11
+[22
 
 
 
-]
+]) [23]
 \openout2 = `appendix1.aux'.
 
  (./appendix1.tex
 Appendix A.
-) [12
+) [24
 
 
 
@@ -532,10 +878,10 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 205.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 205.
 (./thesis.aux (./chapter1.aux) (./chapter2.aux) (./chapter3.aux)
 (./chapter4.aux) (./chapter5.aux) (./chapter6.aux) (./appendix1.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 205.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 205.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 205.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: F5F7F655E5E833C5CDDA8CA462E16E4B;2094.
+(rerunfilecheck)             Checksum: 1E460F56081C85764C6240FB9208513A;3943.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
@@ -543,12 +889,24 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 205.
  ) 
 Here is how much of TeX's memory you used:
- 8176 strings out of 494889
- 122248 string characters out of 6179736
- 211118 words of memory out of 5000000
- 11374 multiletter control sequences out of 15000+600000
- 10435 words of font info for 37 fonts, out of 8000000 for 9000
+ 8608 strings out of 494888
+ 127956 string characters out of 6179710
+ 216907 words of memory out of 5000000
+ 11663 multiletter control sequences out of 15000+600000
+ 10604 words of font info for 38 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 36i,8n,45p,1320b,902s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,8n,45p,762b,889s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on thesis.pdf (34 pages, 201648 bytes).
+PDF statistics:
+ 560 PDF objects out of 1000 (max. 8388607)
+ 509 compressed objects within 6 object streams
+ 129 named destinations out of 1000 (max. 500000)
+ 494 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on thesis.dvi (21 pages, 56868 bytes).

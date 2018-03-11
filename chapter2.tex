@@ -1,35 +1,293 @@
-\chapter{State of the art}
+\chapter{State of the Art}
 
 This chapter should explain the existing work of the areas that your work is based on. The introduction should explain to the reader the area of the work as a whole, how the individual area contribute to the work and what the reader will find in the discussion of each of the areas. The idea is that the reader will be aware of the general contents of the state of the art and will not be surprised by any of the issues that are being discussed.
 
 
-\section{Area 1}
+\section{Cyber Threats in 2018}
+
+Explanation of existing work of a given area that describes the area as a whole, how it fits into the work and then breaking it down into components that are relevant to the work.
+
+An example for possible citations~(\cite{Andrew2013empirical}) or by \cite{Asghari2015Economics}.
+
+%%
+%% SECTION 1 - The Current Cyber-Threat Landscape
+%%
+\subsection{Evolution of the Cyber-Threat Landscape}
+
+Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion.
+
+\subsection{Motivations}
+
+Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion.
+
+\subsection{The Internet of Things}
+
+%Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion.
+Connectivity has been introduced rapidly into processes in critical systems and infrastructures, including power, agriculture, health and transport. Now, devices and processes which were never online before are now being exposed to external attacks, allowing them to be significantly tampered with in ways that can affect the welfare of the entire population that relies on them. Crucial systems and infrastructures on which society relies on a daily basis such as satellites, power grids, medical
+devices and traffic control systems are connected to the internet, making them all vulnerable to potential attacks.
+
+IoT devices will continue to be one of the most effective and easily exploitable tools for attackers. Until there is a truly commercial, market-driven need to secure IoT devices, manufacturers will continue to avoid the expense of recalling and securing the billions of IoT devices that have been so far exploited by these attackers. This means that unfortunately, the exploitation of IoT devices will
+not end any time soon.
+
+%%
+%% SECTION 2 - The State of the Art wrt Botnets
+%%
+\section{Botnets}
+
+Explanation of existing work of a given area that describes the area as a whole, how it fits into the work and then breaking it down into components that are relevant to the work.
+
+An example for possible citations~(\cite{Andrew2013empirical}) or by \cite{Asghari2015Economics}.
+
+%%
+%% SECTION 1 - The Current Cyber-Threat Landscape
+%%
+\subsection{Background}
+
+Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion.
+
+\subsubsection{Definition}
+\subsubsection{Motivations}
+Generally, botnets are used for any tasks that require volume, whether this is volume of network traffic, computation, or something else.
+
+\bullet Distributed Denial of Service (DDoS)
+
+A number of machines under the control of the botnet are used to simultaneously overwhelm a website or server with traffic, resulting in performance degradation and even failure of the service.
+
+\bullet Click fraud
+
+Botnets can be used to generate artificial user interactions with advertisements on the web, making it appear that real users have clicked on an advertisement for the purpose of generating revenue.
+
+\bullet Extortion
+
+IP cameras being hacked: make reference to the website
+
+\bullet Spambots
+
+\bullet Password-cracking
+
+Since botnets allow for synchronised computations across multiple devices, they are often used for brute-force password-cracking computations.
+
+\bullet Bitcoin mining
+
+The explosion of interest in cryptocurrencies over the last several months has led to a significant increase in the number of botnets being used to mine bitcoin and other cryptocurrencies. Botnets are also being used for DDoSing of competing groups performing mining.
+
+Make reference to cryptojacking trends!
+
+\subsection{Design}
+
+Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion
+
+\subsubsection{Architecture}
+\subparagraph{Centralised}
+\subparagraph{Peer-to-Peer}
+
+\subsection{State of the Art}
+Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion
+
+\subsubsection{Recent Developments}
+\subsubsection{Emerging Trends}
+\subsubsection{Timeline of Evolution}
+
+
+\section{Honeypot Technologies}
+
+\subsection{Background}
+\subsubsection{Definitions}
+Cybersecurity expert and Honeynet Project founder Lance Spitzner defines honeypots as &quot;a security resource who&#39;s value lies in being probed, attacked or compromised&quot; [3]. They are categorised as an active network defence mechanism, and are deployed solely with the intention that they will be attacked. 
+
+Honeypots can be classified as both decoys and sensors depending on the context of their deployment.
+
+\bullet Decoys
+
+A honeypot will divert an attacker’s attention away from valuable devices in the network,
+particularly important in a production environment. In order for this strategy to be effective, the honeypot should be the perfect decoy, appearing to be exactly what the attacker is looking for.
+
+\bullet Sensors
+
+Honeypots always act as sensors in the network in which they are deployed. When attacked, system administrators can be alerted and valuable attack data can also be captured for analysis regarding the attacker’s behaviour, strategies and motivations.
+
+Honeynets TODO define and explain.
+
+\subsubsection{Motivations for Use}
+Traditional intrusion-detection mechanisms, such as firewalls, define all attackers passively and
+simply alert to the fact that a security incident, such as an unauthorised connection attempt, has occurred. Honeypots differ in this regard: They proactively entice attackers to give away their attack strategies and intentions by leaving their tracks behind. By learning what these attackers are targeting, more effective defences can be implemented as vulnerabilities and flaws are identified.
+
+There are a number of specific and significant benefits associated with the use of honeypot
+technologies.
+
+\bullet Mimic existing systems
+
+\bullet Inside the network
+
+\bullet Extensive Logging Potential
+
+\bullet Goal-oriented
+
+\bullet Few False Positives
+
+A premise of using a honeypot is that nobody should communicate with it: There is no legitimate reason to interact with a honeypot. This means that typically, a honeypot will trigger very few false positives, since every interaction with a honeypot is automatically distrusted. It is important however to realise that in a production environment, individuals within the organisation may mistakenly interact with the honeypot – something which can often be deduced from looking at the logging captured by higher-interaction honeypots. 
+
+\bullet Offensive and Defensive
+
+
+\subsection{Design}
+
+\subsubsection{Interactivity}
+
+Interactivity levels of honeypots are an important consideration, which define (i) the ability of the attacker to interact with the honeypot, and consequently (ii) the volume and type of information that can be gathered by that honeypot. Levels of interaction range from simply allowing a connection to be made over SSH or another protocol, to being able to download and install malware binaries. The cost versus learning benefits of honeypot interactivity levels increase proportionally, meaning that a highly interactive honeypot will likely be expensive to host and maintain. 
+
+There are three typical classifications of honeypot interactivity level: Low, high and medium.
+
+\begin{itemize}
+\item Low
+
+These honeypots are most commonly used for intrusion detection, i.e. they are designed to
+alert someone to the fact that an attack has occurred, but do not provide any means of
+interacting with the attacker or capturing the attack data.
+\item High
+
+\item Medium
+
+The required level of interactivity of a honeypot with their attacker depends on the use context:
+Low-interaction devices are commonly used for intrusion detection, whereas high-interaction
+devices are live systems that can capture detailed information about the behaviour of attackers such as botnets in the wild.
+\end{itemize}
+
+\subsubsection{Deployment Scenarios}
+
+
+\begin{itemize}
+\item Production Honeypots
+
+Production honeypots are generally deployed in large, corporate networks with the intention that they will act as a part of the active network defence in the organisation’s infrastructure. Their primary purpose is to act as a decoy, luring the attacker away from valuable machines on the network with a seemingly more valuable and vulnerable target on the network. This enables the honeypot to alert system administrators to the fact that there has been an intrusion, giving them the chance to isolate the valuable devices in the network from the infected honeypot. It also enables system administrators to identify vulnerable points in their infrastructure, allowing them to continuously improve the security of their systems. 
+
+The idea of attracting attackers into the system, making them interact with it and give away their attack strategies without causing any harm to the real systems is one of the major attractions of using honeypots in a production environment. The solution being proposed as part of this research is targeted at use in production environments for exactly this reason, thwarting the attacker’s intended compromise of the network.
+
+
+\item Research Honeypots
+
+As the name suggests, these honeypots are generally deployed for the purpose of research rather than as a security measure to protect a network. The emphasis with these honeypots is not so much on the ability of the honeypot to act as a decoy node in a network, and more on the ability of the honeypot to collect valuable data for analysis. By allowing attackers to interact with and infect the honeypot, research can be carried out relating to the behaviour and strategies of the attackers.
+
+\end{itemize}
+
+\subsubsection{Applications}
+
+\subsection{State of the Art}
+
+\subsubsection{Honeypots of Note}
+
+At the time of writing, there were over X honeypot projects listed.
+
+\begin{enumerate}
+
+\item Cowrie
+
+Cowrie is a medium interaction honeypot which was originally forked from the Kippo honeypot project. It is under active development and is widely used as an SSH/Telnet honeypot solution, providing all of the features that the Kippo honeypot provided and more. 
+
+It has many useful capabilities and features, including the following:
+
+\begin{itemize}
+\item It is actively maintained by a dedicated community, with quick response times to queries and bug-fixes.
+
+\item It enables attackers to gain access to the honeypot using SSH and Telnet, both protocols widely exploited by IoT botnets.
+
+\item Cowrie fully emulates a Debian installsation, with an out-of-the-box configurable filesystem that an attacker can interact with.
+
+\item It is an open-source project, allowing users to adapt the honeypot to suit their specific needs.
+
+\item Cowrie records interactions between the attacker and the honeypot, logging everything from commands executed and file downloads attempted to the source IP addresses and protocol information.
+
+\item Cowrie does not limit the number of simultaneous sessions, and can present a mock filesystem and shell to each attacker independently.
+
+\item The fact that the Cowrie software doesn't call on any external sofware to operate makes it much less vulnerable to third-party compromises. It also improves substantially on its predecessor, Kippo, in that many of the fingerprinting issues are resolved.
+
+
+Cowrie cannot execute malware, but can be used in conjunction with other solutions such as Cuckoo Sandbox in order to execute malware safely in a controlled environment.
+
+\end{itemize}
+
+\item Dionaea
+
+Dionaea is a commonly used low-interaction honeypot. It is a medium-interaction honeypot, which emulates a vulnerable Windows operating system running protocols like SSH, HTTP and FTP. The stated goal of Dionaea is to trap malware and obtain a copy of it, to allow it to be inspected using other software such as Cuckoo Sandbox.
+
+\item Kippo
+
+Kippo is a honeypot written in Python which is no longer under active development, but whose direct descendants include the Cowrie honeypot. It is a medium-interaction SSH honeypot, which is designed to capture the entire session interaction of a connected attacker. It is an emulation of a Debian Linux installation, which provides a fake file system and shell for each attacker to interact with while logging all attack data – including records of any downloaded malware. 
+
+Kippo includes configuration options for permitted usernames and password combinations, and all brute-force attempts are logged.
+As quoted from desaster, creater of Kippo, "By running kippo, you're virtually mooning the attackers. Just like in real life, doing something like that, you better know really well how to defend yourself!"
+
+\item Honeyd 
+
+\end{enumerate}
+
+\subsubsection{Challenges}
+
+%%
+%% SECTION 4 - The State of the Art in Cyber-Incident Monitoring
+%%
+\section{Cyber Incident Monitoring}
 
 Explanation of existing work of a given area that describes the area as a whole, how it fits into the work and then breaking it down into components that are relevant to the work.
 
 An example for possible citations~(\cite{Andrew2013empirical}) or by \cite{Asghari2015Economics}.
 
 
-\subsection{Issue A}
+\subsection{Definition}
 
 Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion.
 
-\subsection{Issue B}
+\subsection{Motivations}
 
 Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion.
 
-\subsection{Issue C}
+\subsection{Challenges}
+
+Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion.
+
+\subsection{The Role of Honeypots}
 
 Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion.
 
 
-\section{Closely-related Projects}
+%%
+%% SECTION 1 - The Current Cyber-Threat Landscape
+%%
+\section{Closely-related Work}
 
-A discussion of closely-related projects that have covered similar topics and address similar issues to the work that will be presented in the following chapters.
+%%A discussion of closely-related projects that have covered similar topics and address similar issues to the work that will be presented in the following chapters.
 
-\subsection{Project 1}
+There is a renewed focus on harnessing the unique capabilities of honeypot technologies in light of
+the volume of recent and severe cyber-attacks. Honeypots have even been commercialised in some instances [4] [5], such has been the consideration of their role in intrusion detection in production environments. However as Canary highlights on their product landing page, using honeypots in large networks doesn’t happen practically “because with all the network problems we have, nobody needs one more machine to administer and worry about”. This highlights clearly both the demand  and lack of supply for a solution for large organisations regarding practical deployment and  maintenance of honeypot-based frameworks. 
 
-Discussion of a closely-related project and a description of its approach with references to the topics discussed above.
+\subsection{IoTPot}
+
+Studying IoT botnets using targeted honeypot deployments has been investigated by several  researchers. Yin Minn Pa Pa et al. propose IoTPot [6], a reactive, adaptable IoT honeypot that responds to architecture-specific  requests with corresponding architecture-specific responses. 
+
+\subsection{IoTCandyJar}
+
+Another IoT honeypot, IoTCandyJar [7] aims to be an “intelligent-interaction” honeypot, capturing attack data more effectively by utilising machine learning techniques to determine the most appropriate behaviour to prolong attacks. 
+
+However, for both of these solutions the reactivity of the honeypot to probing and attack is the only characteristic studied for effectiveness. 
+
+\subsection{WSN Honeypot}
+
+In contrast, S. Dowling et al. propose ‘Zigbee Honeypot’ [8] to assess IoT cyber- ttacks launched on wireless sensor networks (WSNs). The focus of this implementation is on attracting these attacks, rather than  identifying the characteristics of the Zigbee honeypot that make it most susceptible to attack: There are however a number of useful tactics used to attract the desired attackers. In relation to honeynets, there has been substantially less work done on developing a system suitable for large-scale deployment. 
+
+\subsection{Distributed Virtual Honeynets}
+
+Pisarcík et al. [9] investigate the effectiveness of a distributed virtual honeynet, using OS-level virtualisation. However, their investigation is limited to simulations of botnet DDoS attacks, limiting the applicability of their system to a live production environment. 
+
+Kedrowitsch et al. [10] also look into the benefits and drawbacks of using OS-level virtualisation in honeypot deployments, providing many useful insights on the viability of this approach. 
+
+\subsection{Honeypot-Based Cyber-Incident Monitors}
+
+A honeypot-based cyber-incident monitor is proposed by Vasilomanolakis et al., which recognises the importance of data aggregation and visualisation from multiple honeypots in order to provide important data to key decision makers. [11] This cyber-incident monitor is not targeted at the use- case of critical service infrastructures or low-cost intrusion detection solutions, but addresses the major consideration in this project of centralising important data for key decision-makers. 
+
+Deutsche Telekom (DT) have also developed an open-source honeypot-based visualisation tool called T-Pot [12] using dockerised honeypots to allow organisations to manage honeypot deployments more easily. DT use this framework to manage the security of their own telecommunications infrastructure, and their work on this project strengthens the case for the coupling of scalable honeynet deployments and visualisation tools.  
+
+%\subsection{Project 1}
+%Discussion of a closely-related project and a description of its approach with references to the topics discussed above.
  
 
 \section{Summary}
