@@ -1,32 +1,79 @@
-\subsection{Definition}
-
-Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion.
-
-\subsection{Motivations}
-
-Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion.
-
-\subsection{Challenges}
-
-Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion.
-
-\subsection{The Role of Honeypots}
-
-Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion.
-
-
 \chapter{Background}
 
-\section{Docker}
-\section{Amazon Web Services}
+\section{Challenges in Modern Security}
+
+\subsection{Cyber-Incident Monitoring}
+
+Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion.
+
+
+
+\section{Problem Formulation}
+
+\section{Technologies}
+\subsection{Docker}
+
+Docker is a containerisation technology. As described by Amazon Web Services [https://aws.amazon.com/what-are-containers/ , accessed 24th March 2018], "containers are a method of operating system virtualization that allow you to run an application and its dependencies in resource-isolated processes."
+
+\subsubsection{Benefits of Containerisation}
+
+Docker has revolutionised the way in which many organisations manage their services. By bundling everything that an application needs to run into a single container \textit{image}, the complexity of deploying services is reduced to running the pre-configured image. Containers are the building blocks of microservices, which allow for isolation and decoupling of services into their own units. This approach to deploying services gives:
+
+
+\begin{itemize}
+	\item Environmental consistency for applications
+	\item Rapid redeployment
+	\item Scalable deployment through efficiency
+	\item Version control
+\end{itemize}
+
+\subsubsection{Containers versus Virtual Machines}
+
+
+- The move towards containers: benefits
+- Examples of migration to containers (NetFlix)
+
+\subsection{Amazon Web Services}
+Running containers in the AWS Cloud allows you to build robust, scalable applications and services by leveraging the benefits of the AWS Cloud such as elasticity, availability, security, and economies of scale. You also pay for only as much resources as you use.
+
+
+\subsection{Elasticsearch, Logstash and Kibana - The ELK Stack}
+
 
 %%
-%% SECTION 4 - The State of the Art in Cyber-Incident Monitoring
+%% SECTION 1 - The Current Cyber-Threat Landscape
 %%
-\section{Cyber Incident Monitoring}
+\section{Closely-related Work}
 
-Explanation of existing work of a given area that describes the area as a whole, how it fits into the work and then breaking it down into components that are relevant to the work.
+%%A discussion of closely-related projects that have covered similar topics and address similar issues to the work that will be presented in the following chapters.
 
-An example for possible citations~(\cite{Andrew2013empirical}) or by \cite{Asghari2015Economics}.
+There is a renewed focus on utilising the unique capabilities of honeypot technologies, in light of the volume of recent and severe cyber-attacks. 
 
+\subsection{IoTPot}
 
+Studying IoT botnets using targeted honeypot deployments has been investigated by several  researchers. Yin Minn Pa Pa et al. propose IoTPot [6], a reactive, adaptable IoT honeypot that responds to architecture-specific  requests with corresponding architecture-specific responses. 
+
+\subsection{IoTCandyJar}
+
+Another IoT honeypot, IoTCandyJar [7] aims to be an “intelligent-interaction” honeypot, capturing attack data more effectively by utilising machine learning techniques to determine the most appropriate behaviour to prolong attacks. 
+
+However, for both of these solutions the reactivity of the honeypot to probing and attack is the only characteristic studied for effectiveness. 
+
+\subsection{WSN Honeypot}
+
+In contrast, S. Dowling et al. propose ‘Zigbee Honeypot’ [8] to assess IoT cyber- ttacks launched on wireless sensor networks (WSNs). The focus of this implementation is on attracting these attacks, rather than  identifying the characteristics of the Zigbee honeypot that make it most susceptible to attack: There are however a number of useful tactics used to attract the desired attackers. In relation to honeynets, there has been substantially less work done on developing a system suitable for large-scale deployment. 
+
+\subsection{Distributed Virtual Honeynets}
+
+Pisarcík et al. [9] investigate the effectiveness of a distributed virtual honeynet, using OS-level virtualisation. However, their investigation is limited to simulations of botnet DDoS attacks, limiting the applicability of their system to a live production environment. 
+
+Kedrowitsch et al. [10] also look into the benefits and drawbacks of using OS-level virtualisation in honeypot deployments, providing many useful insights on the viability of this approach. 
+
+\subsection{Honeypot-Based Cyber-Incident Monitors}
+
+A honeypot-based cyber-incident monitor is proposed by Vasilomanolakis et al., which recognises the importance of data aggregation and visualisation from multiple honeypots in order to provide important data to key decision makers. [11] This cyber-incident monitor is not targeted at the use- case of critical service infrastructures or low-cost intrusion detection solutions, but addresses the major consideration in this project of centralising important data for key decision-makers. 
+
+Deutsche Telekom (DT) have also developed an open-source honeypot-based visualisation tool called T-Pot [12] using dockerised honeypots to allow organisations to manage honeypot deployments more easily. DT use this framework to manage the security of their own telecommunications infrastructure, and their work on this project strengthens the case for the coupling of scalable honeynet deployments and visualisation tools.  
+
+%\subsection{Project 1}
+%Discussion of a closely-related project and a description of its approach with references to the topics discussed above.

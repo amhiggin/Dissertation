@@ -1,6 +1,15 @@
 \chapter{State of the Art}
 
-This chapter should explain the existing work of the areas that your work is based on. The introduction should explain to the reader the area of the work as a whole, how the individual area contribute to the work and what the reader will find in the discussion of each of the areas. The idea is that the reader will be aware of the general contents of the state of the art and will not be surprised by any of the issues that are being discussed.
+%%This chapter should explain the existing work of the areas that your work is based on. The introduction should explain to the reader the area of the work as a whole, how the individual area contribute to the work and what the reader will find in the discussion of each of the areas. The idea is that the reader will be aware of the general contents of the state of the art and will not be surprised by any of the issues that are being discussed.
+In this section, the state-of-the-art in modern security threats and solutions are explored in detail.
+
+Section 1 outlines the cyber-threat landscape across the world as it appears in 2018. Motivations for and challenges presented by cybercrime and cyberwarfare in the current day are investigated, with a view to highlighting the immense importance of cybersecurity in society today.
+
+Section 2 delves into the detail of one of the biggest emerging threats to security today: Botnets. The state of the art in their design and motivations is explored, with a focus on the major evolving threat of Internet-of-Things botnets.
+
+Finally, section 3 considers the role of effective intrusion detection in securing systems and devices. The role of honeypot technology in particular is discussed in the context of existing solutions, with a detailed analysis of the importance characteristics of their design in order to employ them effectively.
+
+%% Botnets constitute one of the most serious weapons at the disposal of criminals today, and their rapid evolution in recent years is highlighted. Finally, the role of honeypots in effective intrusion detection and active network defence is investigated
 
 
 \section{The Modern Cyber-Threat Landscape}
@@ -18,19 +27,27 @@ Starting with a general description of the issue; then drilling down into the de
 
 \subsection{Motivations}
 
-Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion.
+\subsubsection{Politics}
+
+\subsubsection{Financial Gain}
+
+\subsubsection{Competition}
+
+\subsection{High-Profile Events}
 
 \subsection{The Internet of Things}
 
-Connectivity has been introduced rapidly into processes in critical systems and infrastructures over the past several years. Industries and sectors including agriculture, energy, health and transport have all seen revolutionary transformations thanks to what has been dubbed 'Industry 4.0'. 
+Connectivity has been introduced rapidly into processes in critical systems and infrastructures over the past several years. Industries and sectors including agriculture, energy, health and transport have all seen revolutionary transformations as part of what has been dubbed 'Industry 4.0'. 
 
 Whilst this enhanced communicativity and connectivity between devices and processes has enhanced and optimised industrial processes and enabled the conception of countless new applications, the pace of the transformation has broadly resulted in the neglect of security considerations for these systems. Poor design choices have meant that devices and systems which were never online before are now being exposed to external systems, opening up the potential for them to be significantly tampered with in ways that can affect the welfare of entire populations.  Crucial systems and infrastructures on which society relies on a daily basis such as satellites, power grids, medical devices and traffic control systems are connected to the internet, making them increasingly vulnerable to attacks from anyone who wishes to exploit them.
 
 IoT devices will continue to be one of the most effective and easily exploitable tools for attackers. Until there is a truly commercial, market-driven need to secure IoT devices, manufacturers will continue to avoid the expense of recalling and securing the billions of IoT devices that have been so far exploited by these attackers. This means that unfortunately, the exploitation of IoT devices will
 not end any time soon.
 
+
+
 %%
-%% SECTION 2 - The State of the Art wrt Botnets
+%% SECTION 1 - BOTNETS
 %%
 \section{Botnets}
 
@@ -83,53 +100,88 @@ Starting with a general description of the issue; then drilling down into the de
 \subparagraph{Centralised}
 \subparagraph{Peer-to-Peer}
 
-\subsection{State of the Art}
-Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion
+\subsubsection{Attack Types}
 
-\subsubsection{Recent Developments}
-\subsubsection{Emerging Trends}
+
+\subsubsection{Recent Trends}
+
+%% TODO talk about Internet of Things botnets in particular.
+%% Talk about the fact that security on these devices has been very poorly thought through: using Telnet and SSH with insecure passwords is one of the most rudimentary exploits imaginable!
+
+Some of the best-defended targets were threatened by huge numbers of some of the least powerful hosts – insecure IoT devices whose credentials could be easily abused.
+
+\begin{itemize}
+	\item \textbf{Mirai}
+	
+	Mirai is a worm-like family of botnet malware that targets IoT devices. It scans IP address ranges and uses brute-force authentication over the SSH and Telnet protocols to gain access to the device, using a hard-coded dictionary of credentials. Once inside, the malware listens on the device for commands from a C&C server, and continuously scans the network to propagate the infection to otherdevices. Interestingly, other malware running on the device is also killed off by the Mirai malware. 
+	
+	The botnet first surfaced in 2016, when it {ABCXYZ... describe what happened}. The victims targeted by the Mirai botnet “ranged from game servers, telecoms, and anti-DDoS providers, to political websites and relatively obscure Russian sites”.
+		
+	Just a few months ago, the authors were charged with “creating and operating two botnets, which targeted “Internet of Things” (IoT) devices”.
+\end{itemize}
+
 \subsubsection{Timeline of Evolution}
+%%%% This can be the taxonomy section
+
+
+
+
+
+
+%%
+%%	Section 2: HONEYPOTS
+%%
+%%
+
 
 \section{Honeypot Technologies}
 
 \subsection{Background}
+
 \subsubsection{Definitions}
-Cybersecurity expert and Honeynet Project founder Lance Spitzner defines honeypots as "a security resource who's value lies in being probed, attacked or compromised". They are categorised as an active network defense mechanism, and are deployed solely with the intention that they will be attacked. 
+Cybersecurity expert and Honeynet Project founder Lance Spitzner defines honeypots as "a security resource who's value lies in being probed, attacked or compromised". They are categorised as an active network defense mechanism, and are systems which deployed solely with the intention that they will be attacked. 
 
 Honeypots can be classified as both decoys and sensors depending on the context of their deployment.
 
-\bullet Decoys
+\bullet \textbf{Honeypots as Decoys}
 
-A honeypot will divert an attacker’s attention away from valuable devices in the network,
-particularly important in a production environment. In order for this strategy to be effective, the honeypot should be the perfect decoy, appearing to be exactly what the attacker is looking for.
+A honeypot can be used to divert an attacker’s attention away from the valuable devices in the network in which they are deployed. This is particularly useful in a production environment, when there is a need to secure important servers. 
 
-\bullet Sensors
+In order for this strategy to be effective, the honeypot should be the perfect decoy, appearing to be exactly what the attacker is looking for. By then being attacked, the honeypot can immediately notify system administrators of an intruder being present in the network, allowing them to take the appropriate course of action to secure the network.
 
-Honeypots always act as sensors in the network in which they are deployed. When attacked, system administrators can be alerted and valuable attack data can also be captured for analysis regarding the attacker’s behaviour, strategies and motivations.
+\bullet \textbf{Honeypots as Sensors}
 
-Honeynets TODO define and explain.
+Honeypots can also be viewed as sensors in the network in which they are deployed, since they can collect valuable data about the attacks that they receive. This is particularly useful for detecting weaknesses in system design, since the captured attack data can be analysed to understand the attacker’s behaviour, strategies and motivations.
 
 \subsubsection{Motivations for Use}
-Traditional intrusion-detection mechanisms, such as firewalls, define all attackers passively and simply alert to the fact that a security incident, such as an unauthorised connection attempt, has occurred. Honeypots differ in this regard: They proactively entice attackers to give away their attack strategies and intentions by leaving their tracks behind. By learning what these attackers are targeting, more effective defences can be implemented as vulnerabilities and flaws are identified.
 
-There are a number of specific and significant benefits associated with the use of honeypot technologies.
+When compared to traditional intrusion-detection mechanisms such as firewalls, there are some crucial difference. Firewalls define all attackers passively and simply alert to the fact that a security incident, such as an unauthorised connection attempt, has occurred. 
 
-\bullet Mimic existing systems
+Honeypots differ in this regard: They proactively entice attackers to give away their attack strategies and intentions by leaving their tracks behind on the device. By learning what these attackers are targeting, more effective defenses can be implemented as vulnerabilities and flaws are identified.
 
-\bullet Inside the network
+There are a wide range of significant benefits associated with the use of honeypot technologies. 
 
-\bullet Extensive Logging Potential
+\bullet \textbf{Configurability}
 
-\bullet Goal-oriented
+In general, honeypots are highly configurable and can be made to mimic real systems. This configurability allows those deploying them to continuously improve their defense strategies by adapting to evolving behaviours, as well as providing a means of observing attackers in the wild without being detected.
 
-\bullet Few False Positives
+\bullet \textbf{Inside the Network} 
 
-A premise of using a honeypot is that nobody should communicate with it: There is no legitimate reason to interact with a honeypot. This means that typically, a honeypot will trigger very few false positives, since every interaction with a honeypot is automatically distrusted. It is important however to realise that in a production environment, individuals within the organisation may mistakenly interact with the honeypot – something which can often be deduced from looking at the logging captured by higher-interaction honeypots. 
+Honeypots are deployed inside the systems infrastructure of the system they are protecting, rather than on the fringes as with firewalls. This allows for security much closer to the real systems that are being targeted. 
 
-\bullet Offensive and Defensive
+\bullet \textbf{Logging Potential} 
+
+As described, there is huge potential to capture valuable information about the nature of attacks being launched against a system, allowing system administrators to stay up-to-date with the security requirements of their systems.
+
+\bullet \textbf{Few False Positives}
+
+The premise of using a honeypot is that nobody should communicate with it: There is no legitimate reason to interact with a honeypot, since it is deployed with the sole purpose of attracting attacks. This means that typically, a honeypot will trigger very few false positives, since every interaction with a honeypot is automatically distrusted. It is important however to realise that in a production environment, individuals within the organisation may mistakenly interact with the honeypot – something which can often be deduced from looking at the logging captured by higher-interaction honeypots. 
+
+\bullet \textbf{Offensive and Defensive}
 
 
-\subsection{Design}
+\section{Design}
+
 
 \subsubsection{Interactivity}
 
@@ -153,34 +205,38 @@ There are three typical classifications of honeypot interactivity level: Low, hi
 	
 \end{itemize}
 
-\subsubsection{Deployment Scenarios}
 
+
+\subsubsection{Deployment Scenarios}
+There are primarily two deployment scenarios for honeypots: Production and research.
 
 \begin{itemize}
-	\item Production Honeypots
+	\item \textbf{Production Honeypots}
 	
 	Production honeypots are generally deployed in large, corporate networks with the intention that they will act as a part of the active network defence in the organisation’s infrastructure. Their primary purpose is to act as a decoy, luring the attacker away from valuable machines on the network with a seemingly more valuable and vulnerable target on the network. This enables the honeypot to alert system administrators to the fact that there has been an intrusion, giving them the chance to isolate the valuable devices in the network from the infected honeypot. It also enables system administrators to identify vulnerable points in their infrastructure, allowing them to continuously improve the security of their systems. 
 	
 	The idea of attracting attackers into the system, making them interact with it and give away their attack strategies without causing any harm to the real systems is one of the major attractions of using honeypots in a production environment. The solution being proposed as part of this research is targeted at use in production environments for exactly this reason, thwarting the attacker’s intended compromise of the network.
 	
 	
-	\item Research Honeypots
+	\item \textbf{Research Honeypots}
 	
 	As the name suggests, these honeypots are generally deployed for the purpose of research rather than as a security measure to protect a network. The emphasis with these honeypots is not so much on the ability of the honeypot to act as a decoy node in a network, and more on the ability of the honeypot to collect valuable data for analysis. By allowing attackers to interact with and infect the honeypot, research can be carried out relating to the behaviour and strategies of the attackers.
 	
 \end{itemize}
 
-\subsubsection{Applications}
+
+\subsubsection{Honeynets}
+%% Describe honeynets and how they can be beneficial as part of the network security of a system.
 
 \subsection{State of the Art}
 
 \subsubsection{Honeypots of Note}
 
-At the time of writing, there were over 1,000 open-source honeypot projects listed on GitHub.
+At the time of writing, there were over 1,000 open-source honeypot projects listed on GitHub. {https://github.com/search?utf8=%E2%9C%93&q=honeypot&type= , 24th March 2018 }
 
 \begin{enumerate}
 	
-	\item Kippo
+	\item \textbf{Kippo}
 	
 	Kippo is a honeypot written in Python which is no longer under active development, but whose direct descendants include the Cowrie honeypot. It is a medium-interaction SSH honeypot, which is designed to capture the entire session interaction of a connected attacker. It is an emulation of a Debian Linux installation, which provides a fake file system and shell for each attacker to interact with while logging all attack data – including records of any downloaded malware. 
 	
@@ -188,7 +244,7 @@ At the time of writing, there were over 1,000 open-source honeypot projects list
 	As quoted from desaster, creater of Kippo, "By running kippo, you're virtually mooning the attackers. Just like in real life, doing something like that, you better know really well how to defend yourself!"
 	
 	
-	\item Cowrie
+	\item \textbf{Cowrie}
 	
 	Cowrie is a medium interaction honeypot which was originally forked from the Kippo honeypot project. It is under active development and is widely used as an SSH/Telnet honeypot solution, providing all of the features that the Kippo honeypot provided and more. 
 	
@@ -208,11 +264,9 @@ At the time of writing, there were over 1,000 open-source honeypot projects list
 		\item Cowrie does not limit the number of simultaneous sessions, and can present a mock filesystem and shell to each attacker independently.
 		
 		\item The fact that the Cowrie software doesn't call on any external sofware to operate makes it much less vulnerable to third-party compromises. It also improves substantially on its predecessor, Kippo, in that many of the fingerprinting issues are resolved.
-		
-		
-		Cowrie cannot execute malware, but can be used in conjunction with other solutions such as Cuckoo Sandbox in order to execute malware safely in a controlled environment.
-		
 	\end{itemize}
+
+	Cowrie cannot execute malware, but can be used in conjunction with other solutions such as Cuckoo Sandbox {https://github.com/cuckoosandbox/cuckoo , accessed 24th March 2018} in order to execute and analyse malware safely in a controlled environment.
 	
 	\item Dionaea
 	
