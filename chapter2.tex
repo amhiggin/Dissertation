@@ -1,7 +1,7 @@
 \chapter{State of the Art}
 
 %%This chapter should explain the existing work of the areas that your work is based on. The introduction should explain to the reader the area of the work as a whole, how the individual area contribute to the work and what the reader will find in the discussion of each of the areas. The idea is that the reader will be aware of the general contents of the state of the art and will not be surprised by any of the issues that are being discussed.
-In this section, the state-of-the-art in modern security threats and solutions are explored in detail.
+This section is intended as an introduction to the state of the art in cybersecurity and cyber-threats in 2018, in order to give the reader context on the area in which the research fits.
 
 Section 1 outlines the cyber-threat landscape across the world as it appears in 2018. Motivations for and challenges presented by cybercrime and cyberwarfare in the current day are investigated, with a view to highlighting the immense importance of cybersecurity in society today.
 
@@ -103,7 +103,7 @@ Starting with a general description of the issue; then drilling down into the de
 \subsubsection{Attack Types}
 
 
-\subsubsection{Recent Trends}
+\subsection{Recent Trends}
 
 %% TODO talk about Internet of Things botnets in particular.
 %% Talk about the fact that security on these devices has been very poorly thought through: using Telnet and SSH with insecure passwords is one of the most rudimentary exploits imaginable!
@@ -120,7 +120,7 @@ Some of the best-defended targets were threatened by huge numbers of some of the
 	Just a few months ago, the authors were charged with “creating and operating two botnets, which targeted “Internet of Things” (IoT) devices”.
 \end{itemize}
 
-\subsubsection{Timeline of Evolution}
+\subsection{Timeline of Evolution}
 %%%% This can be the taxonomy section
 
 
@@ -136,22 +136,65 @@ Some of the best-defended targets were threatened by huge numbers of some of the
 
 \section{Honeypot Technologies}
 
-\subsection{Background}
-
-\subsubsection{Definitions}
 Cybersecurity expert and Honeynet Project founder Lance Spitzner defines honeypots as "a security resource who's value lies in being probed, attacked or compromised". They are categorised as an active network defense mechanism, and are systems which deployed solely with the intention that they will be attacked. 
 
-Honeypots can be classified as both decoys and sensors depending on the context of their deployment.
+A key characteristic of honeypots is that they should be attractive to an attacker. 'Attractive' in this context means that the honeypot should appear to be exactly the device that the attacker is looking for: A device that has the potential to be easily exploited, whilst offering maximum value to the attacker.
+
+A secondary definition of honeypots would define them based on the context of their deployment as being either a decoy or a sensor.
 
 \bullet \textbf{Honeypots as Decoys}
 
-A honeypot can be used to divert an attacker’s attention away from the valuable devices in the network in which they are deployed. This is particularly useful in a production environment, when there is a need to secure important servers. 
+A honeypot can be used to divert an attacker’s attention away from the valuable devices in the network in which it is deployed. This is particularly useful in a production environment, when there is a need to protect important devices on the network. 
 
-In order for this strategy to be effective, the honeypot should be the perfect decoy, appearing to be exactly what the attacker is looking for. By then being attacked, the honeypot can immediately notify system administrators of an intruder being present in the network, allowing them to take the appropriate course of action to secure the network.
+In order for this strategy to be effective, the honeypot should appear to be exactly what the attacker is looking for. By then being attacked, the honeypot can immediately notify system administrators of an intruder being present in the network, allowing them to take the appropriate course of action to secure the network.
 
 \bullet \textbf{Honeypots as Sensors}
 
 Honeypots can also be viewed as sensors in the network in which they are deployed, since they can collect valuable data about the attacks that they receive. This is particularly useful for detecting weaknesses in system design, since the captured attack data can be analysed to understand the attacker’s behaviour, strategies and motivations.
+
+\subsection{Design}
+
+\subsubsection{Interactivity}
+
+Interactivity levels of honeypots are an important consideration, which define (i) the ability of the attacker to interact with the honeypot, and consequently (ii) the volume and type of information that can be gathered by that honeypot. Levels of interaction range from simply allowing a connection to be made over SSH or another protocol, to being able to download and install malware binaries.  The cost versus learning benefits of honeypot interactivity levels increase proportionally, meaning that a highly interactive honeypot will likely be expensive to host and maintain. 
+
+There are three typical classifications of honeypot interactivity level: Low, high and medium.
+
+\begin{itemize}
+	\item Low
+	
+	These honeypots are most commonly used for intrusion detection, i.e. they are designed to alert someone to the fact that an attack has occurred, but do not provide any means of interacting with the attacker or capturing the attack data. They are used in cases where a lower-risk solution is preferred: In general, a low-interaction honeypot will simply be an emulation of a real service, and so does not offer any opportunity for compromise by an attacker.
+	
+	\item High
+	
+	High interaction honeypots are fully-fledged systems, and give the opportunity for attackers to use real applications on these systems. A great deal can be learned about the nature of attacks from using high-interaction honeypots, since it is the closest thing to observing attacks "in the wild". The trade-off here is the high-risk associated with the exposure of a real device to a malicious actor, which in the worst case could see the entire system taken over by an attacker and used to launch further attacks on other devices.
+	
+	\item Medium
+	
+	As described, the required level of interactivity of a honeypot with their attacker depends on the use context: Low-interaction devices are commonly used for intrusion detection, whereas high-interaction devices are live systems that can capture detailed information about the behaviour of attackers such as botnets in the wild. Medium interaction honeypots offer a good middle-ground, using emulated components of a real system to allow a level of interactivity with the attacker whilst not exposing any real systems that could be compromised.
+	
+	
+\end{itemize}
+
+
+
+\subsubsection{Deployment Scenarios}
+There are primarily two deployment scenarios for honeypots: Production and research.
+
+\begin{itemize}
+	\item \textbf{Production Honeypots}
+	
+	Production honeypots are generally deployed in large, corporate networks with the intention that they will act as a part of the active network defence in the organisation’s infrastructure. Their primary purpose is to act as a decoy, luring the attacker away from valuable machines on the network with a seemingly more valuable and vulnerable target on the network. This enables the honeypot to alert system administrators to the fact that there has been an intrusion, giving them the chance to isolate the valuable devices in the network from the infected honeypot. It also enables system administrators to identify vulnerable points in their infrastructure, allowing them to continuously improve the security of their systems. 
+	
+	The idea of attracting attackers into the system, making them interact with it and give away their attack strategies without causing any harm to the real systems is one of the major attractions of using honeypots in a production environment. The solution being proposed as part of this research is targeted at use in production environments for exactly this reason, thwarting the attacker’s intended compromise of the network.
+	
+	
+	\item \textbf{Research Honeypots}
+	
+	As the name suggests, these honeypots are generally deployed for the purpose of research rather than as a security measure to protect a network. The emphasis with these honeypots is not so much on the ability of the honeypot to act as a decoy node in a network, and more on the ability of the honeypot to collect valuable data for analysis. By allowing attackers to interact with and infect the honeypot, research can be carried out relating to the behaviour and strategies of the attackers.
+	
+\end{itemize}
+
 
 \subsubsection{Motivations for Use}
 
@@ -180,53 +223,10 @@ The premise of using a honeypot is that nobody should communicate with it: There
 \bullet \textbf{Offensive and Defensive}
 
 
-\section{Design}
-
-
-\subsubsection{Interactivity}
-
-Interactivity levels of honeypots are an important consideration, which define (i) the ability of the attacker to interact with the honeypot, and consequently (ii) the volume and type of information that can be gathered by that honeypot. Levels of interaction range from simply allowing a connection to be made over SSH or another protocol, to being able to download and install malware binaries.  The cost versus learning benefits of honeypot interactivity levels increase proportionally, meaning that a highly interactive honeypot will likely be expensive to host and maintain. 
-
-There are three typical classifications of honeypot interactivity level: Low, high and medium.
-
-\begin{itemize}
-	\item Low
-	
-	These honeypots are most commonly used for intrusion detection, i.e. they are designed to alert someone to the fact that an attack has occurred, but do not provide any means of interacting with the attacker or capturing the attack data. They are used in cases where a lower-risk solution is preferred: In general, a low-interaction honeypot will simply be an emulation of a real service, and so does not offer any opportunity for compromise by an attacker.
-	
-	\item High
-	
-	High interaction honeypots are fully-fledged systems, and give the opportunity for attackers to use real applications on these systems. A great deal can be learned about the nature of attacks from using high-interaction honeypots, since it is the closest thing to observing attacks "in the wild". The trade-off here is the high-risk associated with the exposure of a real device to a malicious actor, which in the worst case could see the entire system taken over by an attacker and used to launch further attacks on other devices.
-	
-	\item Medium
-	
-	As described, the required level of interactivity of a honeypot with their attacker depends on the use context: Low-interaction devices are commonly used for intrusion detection, whereas high-interaction devices are live systems that can capture detailed information about the behaviour of attackers such as botnets in the wild. Medium interaction honeypots offer a good middle-ground, using emulated systems to allow a level of interactivity with the attacker whilst not exposing any real systems to the attacker. 
-	
-	
-\end{itemize}
-
-
-
-\subsubsection{Deployment Scenarios}
-There are primarily two deployment scenarios for honeypots: Production and research.
-
-\begin{itemize}
-	\item \textbf{Production Honeypots}
-	
-	Production honeypots are generally deployed in large, corporate networks with the intention that they will act as a part of the active network defence in the organisation’s infrastructure. Their primary purpose is to act as a decoy, luring the attacker away from valuable machines on the network with a seemingly more valuable and vulnerable target on the network. This enables the honeypot to alert system administrators to the fact that there has been an intrusion, giving them the chance to isolate the valuable devices in the network from the infected honeypot. It also enables system administrators to identify vulnerable points in their infrastructure, allowing them to continuously improve the security of their systems. 
-	
-	The idea of attracting attackers into the system, making them interact with it and give away their attack strategies without causing any harm to the real systems is one of the major attractions of using honeypots in a production environment. The solution being proposed as part of this research is targeted at use in production environments for exactly this reason, thwarting the attacker’s intended compromise of the network.
-	
-	
-	\item \textbf{Research Honeypots}
-	
-	As the name suggests, these honeypots are generally deployed for the purpose of research rather than as a security measure to protect a network. The emphasis with these honeypots is not so much on the ability of the honeypot to act as a decoy node in a network, and more on the ability of the honeypot to collect valuable data for analysis. By allowing attackers to interact with and infect the honeypot, research can be carried out relating to the behaviour and strategies of the attackers.
-	
-\end{itemize}
-
 
 \subsubsection{Honeynets}
 %% Describe honeynets and how they can be beneficial as part of the network security of a system.
+Honeynets are networks of interconnected honeypots, which coordinate their efforts to provide active network defense.
 
 \subsection{State of the Art}
 
@@ -238,11 +238,11 @@ At the time of writing, there were over 1,000 open-source honeypot projects list
 	
 	\item \textbf{Kippo}
 	
-	Kippo is a honeypot written in Python which is no longer under active development, but whose direct descendants include the Cowrie honeypot. It is a medium-interaction SSH honeypot, which is designed to capture the entire session interaction of a connected attacker. It is an emulation of a Debian Linux installation, which provides a fake file system and shell for each attacker to interact with while logging all attack data – including records of any downloaded malware. 
+	Kippo is a honeypot written in Python which is no longer under active development, but which has influenced many subsequent honeypot projects. It is a medium-interaction SSH honeypot, which is designed to capture the entire session interaction of a connected attacker. It is an emulation of a Debian Linux installation, which provides a fake file system and shell for each attacker to interact with while logging all attack data – including records of any downloaded malware. 
 	
-	Kippo includes configuration options for permitted usernames and password combinations, and all brute-force attempts are logged.
-	As quoted from desaster, creater of Kippo, "By running kippo, you're virtually mooning the attackers. Just like in real life, doing something like that, you better know really well how to defend yourself!"
+	Kippo offers a falsified SSH service to which attackers can connect, and includes configuration options for permitted usernames and password combinations. All brute-force login attempts and interactions with the honeypot are logged. 
 	
+	(\textit{Refer to the fingerprinting of Kippo which resulted in its eventual retirement})
 	
 	\item \textbf{Cowrie}
 	
@@ -253,7 +253,7 @@ At the time of writing, there were over 1,000 open-source honeypot projects list
 	\begin{itemize}
 		\item It is actively maintained by a dedicated community, with quick response times to queries and bug-fixes.
 		
-		\item It enables attackers to gain access to the honeypot using SSH and Telnet, both protocols widely exploited by IoT botnets.
+		\item It enables attackers to gain access to the honeypot using SSH and Telnet, two protocols which are widely targeted by IoT botnets.
 		
 		\item Cowrie fully emulates a Debian installsation, with an out-of-the-box configurable filesystem that an attacker can interact with.
 		
@@ -278,8 +278,25 @@ At the time of writing, there were over 1,000 open-source honeypot projects list
 \end{enumerate}
 
 \subsubsection{Challenges}
-There are many challenges to overcome in order to make the use of honeypots more widespread. To many, the idea of inviting a malicious actor into a production system seems like a potentially destructive action, and so many system administrators do not consider honeypots as part of their security infrastructure. Canary, a honeypot solution developed by Thinkst Applied Research,  highlight on their product landing page the challenge behind adopting honeypots in large networks: “With all the network problems we have, nobody needs one more machine to administer and worry about”. This statement highlights the demand and lack of supply of feasible solutions for large organisations regarding deployment and maintenance of honeypot-based systems. 
- 
+	\subparagraph{Detection}
+	One of the major considerations when designing or using a honeypot-driven solution is the ability of the honeypot to be detected as a non-genuine system. This detection is known as \textit{fingerprinting}, and it is a continuous challenge for honeypot designers to combat fingerprinting checks by many different attackers.
+	
+	(\textit{Example of fingerprinting by Hajime?})
+
+	\subparagraph{Adoption}
+	There are many challenges to overcome in order to make the use of honeypots more widespread. To many, the idea of inviting a malicious actor into a production system seems like a potentially destructive action, and so many system administrators do not consider honeypots as part of their security infrastructure. Canary, a honeypot solution developed by Thinkst Applied Research,  highlight on their product landing page the challenge behind adopting honeypots in large networks: “With all the network problems we have, nobody needs one more machine to administer and worry about”. This statement highlights the demand and lack of supply of feasible solutions for large organisations regarding deployment and maintenance of honeypot-based systems. 
+	
+	\subparagraph{Ethical Concerns}
+ 	The use of any surveillance technology, which is the category into which honeypots fall, has ethical questions associated with it. Honeypots are widely accepted as an ethical approach to intrusion detection and understanding cyber-attacks. Since there is no legitimate reason for interacting with a honeypot, any interactions are likely to be of a malicious nature – in	which case, the honeypot simply serves to counteract further attacks of this type in the	future. As outlined by the SANS Technology Institute [1], their use does not involve:
+ 	
+ 	\begin{itemize}
+
+ 		\item Entrapment, since there is no inducement to attack the honeypot – rather, it is	something that all devices are vulnerable to because attackers will always seek to attack devices within their reach, regardless of whether it may be a honeypot. As aptly phrased by security researcher Lance Spitzner [2], “Attackers find and break into honeypots on their own initiative”.
+ 	
+ 		\item Invasion of privacy, since surveillance mechanisms are broadly seen to be acceptable where they serve simply to protect their own environment.
+ 		
+	\end{itemize}
+
 
 \section{Summary}
 

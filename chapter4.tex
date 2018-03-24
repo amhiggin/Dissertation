@@ -1,4 +1,4 @@
-\textit{\chapter{Design}
+\chapter{Design}
 
 Description of the Design chapter and its contents.
 
@@ -11,17 +11,46 @@ General discussion of the design and the overall decisions that were made.
 
 \subsection{Tracking Internet-of-Things Botnets}
 
+From the outset, the most interesting and relevant category of botnet was IoT botnets. Finding a honeypot solution that would
+
 \section{Design Decisions}
 	\subsection{Considerations}
+		\subsubsection{Choice of Hosting Solution}
+		AWS EC2 very flexible and offered some free credits through their AWS Educate programme. Though other solutions like DigitalOcean and Trinity College's OpenNebula infrastructures were considered, the flexibility of options offered by AWS resulted in it ultimately being the platform of choice.
+		\subsubsection{Choice of Honeypot}
+				
 		\subsubsection{Network Design}
 		\subsubsection{Remote Cyber-Monitoring}
 		- PSAD
 		- Filebeat
 
 		\subsubsection{Container Capabilities}
+		Importance of considering how restricted the container capabilities should be in order to capture attacks, whilst also keeping the systems secure.
+		
+		As quoted from desaster, creater of Kippo, "By running kippo, you're virtually mooning the attackers. Just like in real life, doing something like that, you better know really well how to defend yourself!"
+		
+		If an attacker was to discover that they were in fact being monitored by a honeypot, it is plausible that they could launch an attack on the honeypot or the platform on which it is hosted.
 
 		\subsubsection{Deployment Replicability}
 		
+		\subsubsection{Ethical Considerations}
+		There are a number of potential ethical issues associated with a project using honeypots, as outlined in Section \textit{(Refer to section)}. A further ethical concern is the ability for a honeypot to be used as an attack platform. After deliberation on the potential for this to arise during the research, the following conclusions were drawn: 	
+		
+		\begin{itemize}
+		\item This risk can be safely viewed as the general risk associated with using devices connected to the web, and not necessarily related to the use of honeypots. This view is in line with that held by Nawrocki et al. (M. Nawrocki, M. Wahlisch, T. C. Schmidt, C. Keil, J. Schonfelder, “A Survey on Honeypot Software and Data Analysis,” in ArXiv e-prints, eprint 1608.06249, 2016.).
+		
+		\item Although it is never possible to entirely eradicate the risk of attack propagation, the design of the systems being used provide mitigation against this risk.
+			\begin{itemize}
+
+			\item The primary honeypot being used is the Cowrie [4] honeypot, an emulated	environment. It does not give any ability for a malicious user make outbound network connections, and so cannot be used to propagate an attack.
+			\item \textbf{A secondary honeypot type being used is a ‘jumpbox’ router honeypot which	has the ability to make outbound network connections. However, it is being designed to be a maximally restricted environment so that the probability of attack propagation is also minimal.}
+		
+			\item Dedicated research environments where the honeypots are sandboxed from important devices and networks are also efective for protecting external systems. To address this, Amazon Web Services is being used to host the research environment – isolated from all personal and public networks and systems, minimising the impact of an attack if it did propagate outside of the system.
+			\end{itemize}
+		\end{itemize}		
+	
+	Overall, the ethical concerns around the use of honeypots are widely accepted to be resolved by the nature of the deployment of honeypots: Ultimately, their purpose in deployments are to defend against unethical actions by attackers.
+	
 	\subsection{Challenges}
 
 

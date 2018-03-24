@@ -1,23 +1,44 @@
-\chapter{Conclusions \& Future Work}
 
-\section{Conclusions}
 
-\section{Future Work}
+\chapter{Evaluation}
 
-There is substantial scope for additional developments based on the foundations laid by this research.
 
-\subsection{Extension of the Cowrie Project}
+\section{Experimental Setup}
 
-During the course of the research, it was discovered that the Cowrie honeypot did not provide the capability to make outgoing network connections. By design, medium-interaction honeypots should not give an attacker the ability to use all functionality that would exist in a real environment - however, this limitation restricted the scope of the work during the project.
+Describes the experimental setup and the values that were defined for the variables as given in table~\ref{table:experimentsetup}.
 
-Given the time within which the research was being undertaken, it was not possible to extend the Cowrie source code to give it the ability to make outbound network connections over SSH and Telnet. Potential changes to the source code were documented, and are included in the following sections.
+\begin{table}[!h]
+	\begin{center}
+		\begin{tabular}{|c|c|} 
+			\hline
+			\bf Column 1  & \bf Column 2   \\
+			\hline
+			Row 1 & Item 1  \\
+			Row 2 & Item 1  \\
+			Row 3 & Item 1  \\
+			Row 4 & Item 1  \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption[Variables of the experiment]{Caption that explains the table to the reader}	
+	\label{table:experimentsetup}
+\end{table}
 
-\subsubsection{Outbound SSH Connectivity}
-To be completed.
 
-\subsubsection{Outbound Telnet Connectivity}
-To be completed.
+\section{Experiment 1}
 
-\subsection{Alternative Network Configurations}
+Figure~\ref{fig:measurements} shows measurements.
 
-\subsection{Extension of Log Analysis}
+\includewidefigure{measurements}{Measurement of System Wakeups}{Long caption that describes the figure to the reader}{measurements.png}
+
+\section{Experiment 2}
+
+\section{Experiment 3}
+
+\section{Discussion}
+
+It is quite probable that some of the attack patterns may have been different, had a different hosting solution been used. As described by (Vasilokonias? et al), Amazon Web Services have published their IP ranges in the public domain ()https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html)
+AWS are very well-known and popular, so are likely an attractive target for this reason.
+
+
+\section{Summary}
