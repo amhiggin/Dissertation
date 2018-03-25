@@ -24,7 +24,20 @@ There were two AWS instances deployed for the implementation of the project. Bot
 
 \includecode{Short Caption}{Lengthy caption explaining the code to the reader}{snippet.py}
 
-\section{ELK}
+
+\section{PSAD}
+
+\section{Docker}
+
+	\subsection{Cowrie Containers}
+
+	\subsection{Router Container}
+	
+	\subsection{The Docker Honeynet}
+	- Define bridge network (dmz)
+	- Specify IP addresses for everyone on the network
+	
+\section{Logging and Visualisation}
 
 The Elasticsearch-Logstash-Kibana (ELK) stack is widely used as a means of log analysis, aggregation and visualisation. This meant that there were plentiful resources available from which to learn how to configure these tools to work together.
 
@@ -36,10 +49,9 @@ Some complementary tools were also used in order to facilitate the use of the EL
 	\subsection{Logstash}
 	\subsection{Filebeat}
 		\subsubsection{Crontab}
+		
+		A cron job was configured to run every 60 seconds on the honeypot instance, shipping the logs from a defined location on the honeypot instance to the \textit{/var/logs/} directory. 
 
-\section{PSAD}
+\section{Bash Scripting}
 
-\section{Docker}
-	\subsection{Cowrie}
-	\subsection{Router}
-	\subsection{Honeynet}
+Bash scripts were used in order to make the entire setup maximally reproducable. \textbf{These can be found in \underline{Appendix A}}
