@@ -5,9 +5,13 @@ Description of the Design chapter and its contents.
 
 \section{Proposed Work}
 
-General discussion of the design and the overall decisions that were made.
+
+
+There has also been a lack of conclusive research carried out to identify the characteristics that make a honeypot the target of an IoT botnet, particularly since this is such a recently realised threat. The looming threat of IoT botnet attacks on infrastructures of critical services makes it all the more important to understand these attackers and how they identify their weakest targets. Again, the configurability and informative capabilities of honeypots makes them an attractive option here. These conclusions have motivated the formulation of the proposed work, outlined in the following sections. A discussion of the relevance of and lessons learned from some Closely Related Work is also included towards the end of the section.
+2. The Study of IoT Botnets using Honeypot
 
 \subsection{Cyber-Incident Monitor for Critical Infrastructures}
+%% TODO add in Jason's suggestion of how the jumpbox device in GP's office propagates the infection into the core of the system
 
 \subsection{Tracking Internet-of-Things Botnets}
 
@@ -22,7 +26,9 @@ From the outset, the most interesting and relevant category of botnet was IoT bo
 		\subsubsection{Network Design}
 		\subsubsection{Remote Cyber-Monitoring}
 		- PSAD
+			- Provided by the local machine (not the remote management instance)
 		- Filebeat
+		- Management Instance: independent, isolated machine dedicated to remote monitoring and providing visualisation information.
 
 		\subsubsection{Container Capabilities}
 		Importance of considering how restricted the container capabilities should be in order to capture attacks, whilst also keeping the systems secure.

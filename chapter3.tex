@@ -1,14 +1,54 @@
 \chapter{Background}
 
+Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion.
+
 \section{Challenges in Modern Security}
 
 \subsection{Cyber-Incident Monitoring}
 
-Starting with a general description of the issue; then drilling down into the details of the issue and how it has been covered in the literature. For a skeleton at the beginning of the writing, this text should be replaced by a general short description, so that you know what you want to discuss and can review the sequence of the discussion.
 
 
 
 \section{Problem Formulation}
+
+As discussed at length, the continuously advancing nature of security threats in response to technological developments and innovations means that the research and documentation of techniques, tools and behaviours in cybersecurity quickly become outdated. One thing is very clear: That there is an urgent need for re-evaluation of the cybersecurity defence strategies of critical service infrastructures in order to protect the wider global community. Ultimately, it is this consideration that is at the heart of formulating the research problem.
+
+Taking the compromise of the NHS infrastructure due to the WannaCry infection in 2017 gives a great basis for addressing many issues seen across critical service infrastructures. Being such a high-impact incident, this event in particular has emphasised the severe consequences of such an attack on a critical service.
+
+	\subsection{Shortcomings in Critical Service Infrastructures}
+	
+	At present, IT systems in many organisations are comparable to a “black-box system”, a term commonly used in engineering where there is a lack of feedback mechanisms present in the system in question. (\textit{Insert reference to definition of this concept}) Such a system gives no indication of what is happening internally until it starts to behave unexpectedly, making it difficult to diagnose problems and almost impossible to resolve them. In this regard, it is necessary to recognise that although the use of traditional intrusion detection systems such as firewalls hold an important place in securing IT systems, they have limited diagnostic capabilities.
+	
+	The compromise of the NHS systems illustrates a number of substantial shortcomings in their cybersecurity defence strategies up to 12th May 2017 when the WannaCry attacks occurred, which were identified in an audit report [6] by the UK National Audit Office. 
+	
+	\begin{enumerate}
+		\item There were no established protocols in place in the event that such a high-impact cyber incident would occur. As a consequence of much misdirected communication, it took approximately half a day for key decision makers and first responders to be informed. 
+		
+		\item There was no incident monitoring in place to alert security first-responders to any unusual behaviour in the NHS systems: Evident from the fact that it took over half a day to reach those who could take remedial action. 
+		
+		\item There was no centralisation of system data, meaning that security experts had to physically attend the affected sites in order to collect crucial data about the attacks. This further prolonged the period for which these systems remained inoperable. 
+	
+		\item Recommendations regarding system updates for the NHS IT systems were not followed, and there was no system in place to ensure that the actions had been taken. Outdated and unpatched operating systems were a major contributor to the success of the compromise, which was entirely based on a Windows exploit.5
+	
+	\end{enumerate}
+	
+	Ultimately, the lack of monitoring of the NHS systems meant that when the attacks occurred, the systems at the affected sites remained offline for an extended period of time, causing major issues across the entire healthcare system in the UK. Using honeypots as part of  intrusion detection and active network defence could provide a solution to this. The ability of honeypots to produce cyber-incident alerts with a very low number of false positives, as well as capturing detailed information about interactions with attackers, makes a honeypot-based system a potential solution to the issues encountered by the NHS in May 2017.
+
+	\subsection{The Potential of Honeypot-Driven Incident Montoring}
+	A production-ready system leveraging off the ability of honeypots to proactively detect and learn from attacks would provide a great deal of extra knowledge to system administrators about the flaws in their IT infrastructure. Such a system must be low-cost, low-maintenance and highly effective: A cyber-incident monitoring framework that can be easily deployed in an enterprise-scale network. It will need to appeal to organisations in terms of: (i) Cost, (ii) effectiveness in securing their network, (iii) reliability, and (iv) maintenance requirements. All of these boxes will need to be ticked to make it feasible to deploy such a solution in a critical infrastructure. To address the requirements, the system will need to provide: 
+	
+	\begin{itemize}
+		\item A deployment solution that is cost-effective, quick and scalable, whilst compatible with existing IT infrastructure; 
+		
+		\item A number of highly attractive honeypot devices, acting as decoys to lure the attackers away from the real, valuable machines in the deployment network; 
+		
+		\item A mechanism to isolate the honeypots from other elements of the network, so that in the event of a honeypot being compromised the valuable devices in the network can be detached to protect them; 
+		
+		\item A centralisation point for data collected from the honeypots, i.e. a monitoring server, giving administrators a holistic view of their system in order to make well-informed decisions; 
+		
+		\item An effective and reliable alert system, such that the key parties can be alerted when an event occurs in the system.
+		
+	\end{itemize}
 
 \section{Technologies}
 \subsection{Docker}

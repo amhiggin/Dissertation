@@ -7,6 +7,20 @@
 
 
 \section{AWS EC2}
+There were two AWS instances deployed for the implementation of the project. Both were hosted in the Amazon US East (Ohio) availability region with Ubuntu 16.04 LTS operating systems, on servers with different hardware resources.
+
+\begin{itemize}
+	
+	\item Management Instance
+	Since the management instance was required to host a number of visualisation tools, there were certain minimum hardware resources required to be able to run these. Due to cost considerations, a minimum set of resources were allocated: a server with 4GB of RAM and 2 virtual CPUs was provisioned. 
+	
+	\item Honeypot Instance
+	
+	In order to be able to host a number of docker containers, the hardware requirements of the AWS instance were greater than those provided with the 12-month free-tier offer. Instead, a machine with 16GB RAM and 4 virtual CPUs was provisioned in order to allow a sufficient number of docker containers to be hosted on the device. 
+	
+	
+\end{itemize}
+
 
 \includecode{Short Caption}{Lengthy caption explaining the code to the reader}{snippet.py}
 
