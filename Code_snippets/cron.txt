@@ -1,0 +1,5 @@
+# m h  dom mon dow   command
+* * * * * /bin/cp -a  /home/ubuntu/cowrievolumes/*/ 
+	/var/log/cowrie/ >> /var/log/cowrie/cronlog.log
+* * * * * /bin/cp -a  /home/ubuntu/router/*/ 
+ 	/var/log/cowrie/router/ >> /var/log/cowrie/cronlog.log

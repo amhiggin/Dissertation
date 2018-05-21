@@ -1,0 +1,130 @@
+\chapter{Conclusions and Future Work} \label{Chapter7}
+The objectives set out for this research in \textit{Section \ref{ProposedWork}} of this document, although not achieved fully, yielded enhancements to the deployability of active network defence through incident monitoring as well as valuable insights into the way in which such systems should be designed to improve their threat detection capabilities.
+
+Section \ref{ConclusionsSection} draws some conclusions regarding the outcomes of the research, focusing on the original elements of the research objectives.
+
+Section \ref{FutureWork} explores a number of potential avenues for expanding upon the research conducted in this project. These include potential improvements to the proposed approach as well as opportunities to conduct additional work building on the foundations laid by this research.
+
+Finally, \textit{Section \ref{FinalRemarks}} includes some final remarks and recommendations based on the research conducted.
+
+%
+% CONCLUSIONS
+% 
+\section{Conclusions} \label{ConclusionsSection}
+Though it is clear that this research would have benefited significantly from additional time within which to meet its objectives, the substantiality of knowledge gained from the exploration of challenges in the field of security today was unprecedented.
+
+The major achievements and conclusions drawn from this research are described in the following subsections.
+
+\subsection{Cyber Incident Monitoring in Critical Infrastructures}
+The major contribution of this work has been the development of a novel containerised honeynet-driven incident monitor. The value that can be provided by the succinct description of attack data through visualisation is evident: These incident monitors allow system administrators to represent threat data in a meaningful way, enabling a holistic view of their systems.
+
+There is tangible evidence that the incident monitor developed in this research provides greater usability of honeypot data than that which would have resulted from just using honeypots alone:
+
+\begin{itemize}
+
+\item Visualisation of the honeypot data means that reams of logs don't have to be searched through in order to understand the most relevant threat information;
+\item The aggregation of data from multiple honeypots by a centralised logging system, allowing trends to be easily identified;
+\item The ability to receive instantaneous threat intelligence alerts via email, pin-pointing the perpetrator;
+\item The fact that installation and configuration of the honeypots is automated, as well as the networking required to connect them.
+\end{itemize}
+
+As such, this development has effectively addressed many of the major barriers to employing active network defence in infrastructures today: A valuable contribution to the field of security.
+
+\subsection{The Potential of Containers for Security Applications}
+The use of containers has added substantial value to the honeynet solution implemented in this project. It serves as a proof-of-concept with regards to usability of active network defence mechanisms for network administrators by providing the ability to automatically install and configure multiple replicable environments on-the-fly.
+
+As evidenced by this research, the work being done to containerise security applications is something that presents many challenges: There are no manuals or existing resources to refer to in the development of such systems, and so there is a lot of room for research and evaluation of different approaches to doing so.
+
+\subsection{The Importance of Honeypots in Active Network Defence}
+As has been observed during the course of this research, working with honeypots can be highly unpredictable, making conclusive research difficult to achieve under time constraints. However, it is clear that the ability of honeypots to provide active network defence through deceiving and monitoring attackers make them an attractive option for combating the dynamic, evolving threats that are increasingly impacting individuals and organisations across the world. Critical service infrastructures are in desperate need of the \textit{adaptive} threat detection capabilities of honeypots to protect their systems and those who depend on them.
+
+\subsection{The Future of IoT Security}
+
+It is clear even from the limited experiments that were conducted in this research that IoT botnets are extremely active: Every ''thing'' with internet connectivity is a means of exploiting communications and interaction. People are increasingly dependent on interconnected services and applications, and as a result are vulnerable to cyber threats beyond the reach of their own devices. 
+
+Critical service architectures will continue to be targeted by severe cyber attacks well into the future as nation states continue to engage in cyber-combat. There will need to be huge innovation in the area of IoT security before the gargantuan challenges being faced by these infrastructures can even be remotely resolved: It is only when a system is designed with security in mind that a system can be considered even relatively secure. Applications are continuing to have connectivity integrated into them with very little consideration given to their security, and this is something that is not likely to end any time soon. It is likely that until there is a truly market-driven incentive for manufacturers to implement decent security mechanisms in their products, this is unlikely to change.
+
+
+%
+% FUTURE WORK
+% 
+\section{Future Work} \label{FutureWork}
+Whilst an end-to-end cyber incident monitoring system was successfully developed in this research, the full intended evaluation of the system was not possible as discussed in \textit{Section \ref{DesignPivot1}}. However, this gives rise to opportunities for additional developments and enhancements based on the foundations laid by this research, a number of which are discussed below.
+
+
+\subsection{Extension of the Cowrie Honeypot} \label{ExtendingCowrie}
+
+As explained in the \textit{Section \ref{DesignPivot1}}, the Cowrie honeypot by design does not allow outbound network connections. This research would have benefited greatly from the extension of the Cowrie honeypot to include this functionality, but time constraints meant that such a development was not within the scope of the project. 
+
+Though an in-depth inspection of how such an extension could be added to the Cowrie source code was not conducted, it is clear that it would involve relatively significant development effort to implement an additional networking client as part of the Cowrie application in Python. The Cowrie application already includes Python modules for SSH and telnet traffic forwarding which would form a useful starting point in this implementation.
+
+Such a networking client would need to be able to have a view of the underlying networking stack of the host, such that outbound connections to other Cowrie honeypots can be facilitated and a view of hosts nearby can be obtained so that an attacker is not expected to probe IP address ranges blindly. However, the addition of outbound networking capabilities in the Cowrie honeypot would bring it closer to becoming a high-interaction honeypot, which creates a number of new issues for the use of Cowrie. Circumventing the risks associated with high-interaction honeypots is challenging, as was found during this project.
+\begin{itemize}
+\item The networking client would need to implement some destination authentication mechanism such that outbound connections from Cowrie are only permitted to other Cowrie honeypots. This would minimise the risk of a Cowrie honeypot propagating an attack to another Cowrie honeypot;
+\item The interface between the networking client and the network stack of the host system would need to be very carefully implemented and audited for it to be shipped as part of the Cowrie honeypot package, since it should be very difficult for an attacker to exploit such an interface to the host system.
+\end{itemize}
+
+The addition of this feature as an optional function of the Cowrie honeypot would facilitate the future deployment of honeynets entirely based on the Cowrie honeypot, leveraging all of its configuration and logging capabilities. This would be a very useful contribution to the Cowrie development effort, and would be an excellent starting point for a continuation of the work conducted in this research.
+
+
+%\subsection{%Alternative Network Configurations}
+%Multiple honeynets connected to the single router? (Maybe with fewer honeypots per net)
+
+\subsection{An Improved High-Interaction Containerised Honeypot}
+It is clear from the challenges encountered in both the implementation of the incident monitor and the experiments to determine an effective design for adaptive honeypots, that the router container honeypot left much to be desired in terms of its ability to facilitate attacks. This is largely due to the fact that this honeypot was not included as an original component of the proposed system, and so did not benefit from the substantially greater consideration of related literature that preceded the design of other components of the system.
+
+There is much opportunity for improvement of the router container honeypot. There were no existing container-based high interaction honeypots found during the course of this research, a gap which many would benefit from being filled.
+
+Some potential areas for improvement of the existing router honeypot that have been identified include the following:
+\begin{itemize}
+    \item Further isolation from the host system through investigation of alternative Docker networking approaches;
+    \item The implementation of reliable, detailed keylogging inside the router container that could be used to visualise the commands executed by attackers;
+    \item Extension of the image definition of the router honeypot to target requirements of specific IoT botnets, rather than solely improving the design by incrementally altering the environment on an experiment-by-experiment basis. 
+\end{itemize}
+
+Given these improvements and sufficient time, it would be strongly recommended that the experiment iterations or an extension of these should be resumed in a bid to improve upon the current state-of-the-art in adaptive honeypots. It is however strongly recommended that any future work conducted into experiment-based design of honeypots should consider the unpredictability factor associated with such work during the design phase.
+
+
+\subsection{Machine Learning Approaches to Adaptive Honeypot Design}
+There is huge potential for the implementation of machine learning-based honeypot solutions, similar to that developed by the researchers behind IoTCandyJar. \cite{IoTCandyJar} The use of such techniques enables honeypots to self-improve by learning what makes them most effective in enticing and maintaining the interest of attackers, making for ultimately more effective active defence in networks.
+
+In the context of the work that has been done in this project towards proposing design approaches for adaptive honeypots, a machine learning back-end component similar to the \textit{IoTLearner} module implemented by the IoTCandyJar researchers would be an excellent enhancement to the system that has been developed. \cite{IoTCandyJar} Such a module could potentially perform many of the functions currently performed by the router honeypot, providing responses that would encourage the attacker to progress their attack to the stage that they would look to propagate it to nearby hosts. To enable this propagation would either require:
+\begin{itemize}
+\item A traffic routing module similar to that proposed in \textit{Section \ref{ExtendingCowrie}} to route SSH and telnet attack traffic to the Cowrie honeynet; or
+\item An architecture similar to that proposed by the IoTPot researchers, where the \textit{IoTLearner} machine learning module would act as the \textit{front-end responder} in the IoTPot architecture and forward connection requests to a high-interaction backend to be handled. \cite{IoTPot2016} \cite{IoTCandyJar} 
+\end{itemize}
+
+In summary, the use of machine learning approaches in the implementation of dynamic, reactive honeypots coupled with the novel architecture and deployability of the incident monitoring solution developed in this research would be a very worthwhile investment as a future project.
+
+
+ 
+\subsection{Alternative Threat Notification Systems}
+The alert generation system that was used in this project was the commonly used port scan detection tool PSAD. It was found to effectively detect probing of the EC2 honeypot instance on which the containerised honeypot was hosted, generating email alerts for any probes detected almost instantaneously. However, it was also relatively prone to generating false positives because of scenarios such as that described in \textit{Section \ref{AlertSystemSection}}.
+
+There is certainly potential for other alerting mechanisms to be used in this system which may provide more accurate and effective communication of threat intelligence. Of note is the fact that the Cowrie project supports integration with Slack, an instant messaging and collaboration service that is used in many organisations for workplace communication. As a system that can provide instant messages to a distributed set of mobile users, there is potential for the use of Slack and similar messaging channels as a means of providing threat intelligence alerts generated by the Cowrie honeynet.
+
+\subsection{Alternative System Architectures \label{AlternativeSystemArchitectureFW}}
+ As identified in \textit{Section \ref{CentralisedManagementEvaluation}}, the fact that there is only a single management server supporting the processing and visualisation of all of the honeypot log data means that there is a single point of failure in the system. Should the management instance crash due to any system failure, the entire incident monitoring system would not be available to provide analysis and visualisation of attack data.
+ 
+More distributed approaches such as passive replication could provide greater reliability for the system: By passively replicating the management instance, there would always be a node capable of processing honeypot logs and providing visualisations to system administrators. This would incur significant initial configuration overhead: An initial estimation of effort involved here for a single replica would include:
+\begin{itemize}
+\item The provision of a new EC2 instance capable of hosting the ELK log processing stack;
+\item Replicated configuration of the ELK stack tools and Nginx on the new EC2 instance;
+\item The generation and distribution of an additional SSL certificate to the EC2 honeypot instance;
+\item Updating the configuration of Filebeat to ship honeypot logs to both server instances;
+\item The addition of a monitoring communication between the two management servers, such that the passive replica can take over if the primary fails.
+\end{itemize}
+
+In addition, ongoing maintenance overheads must be considered by virtue of the addition of another node to the system. However, adding replication would significantly increase the reliability of what is a time-sensitive threat mitigation service.
+
+
+%
+% CLOSING REMARKS
+% 
+\section{Closing Remarks} \label{FinalRemarks}
+%  in a way that caters for the stringent requirements of a production network
+This research has seen the development of a containerised cyber-incident monitor: A proposal to address the need for active defence mechanisms in systems of critical services. Though there is significant work remaining to make this system production-ready, there are many elements of the proposed system which address the current issues being faced in these infrastructures by providing a feasible, flexible active defence solution.
+
+Active network defences with their ability to adapt to detect new threats will only become more important into the future as the gap between threats and the mitigations against them continues to widen. There is a fundamental shift in outlook required by those managing the security of IT systems, such that preventative security measures are not the sole mechanisms protecting them from increasingly sophisticated threats.
+
+The crucial takeaway from this research is that it is of critical importance in the development of any software system that a threat model is included in the design from the very beginning. If this is widely included as part of software design and implementation, it is likely that more risks will be mitigated and that fewer  vulnerabilities will arise. Though it is only theoretically possible to evaluate and eradicate \textit{all} vulnerabilities in a system, a security-oriented approach to designing software systems would go a long way towards reducing the implications of serious attacks on their users.

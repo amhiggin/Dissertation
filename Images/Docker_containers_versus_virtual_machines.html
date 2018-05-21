@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)https://docs.docker.com/get-started/#images-and-containers -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!--<base href="/get-started/">--><base href=".">
+	
+	<style type="text/css">
+		@charset "UTF-8";
+		[ng\:cloak],
+		[ng-cloak],
+		[data-ng-cloak],
+		[x-ng-cloak],
+		.ng-cloak,
+		.x-ng-cloak,
+		.ng-hide:not(.ng-hide-animate) {
+			display: none !important;
+		}
+
+		ng\:form {
+			display: block;
+		}
+	</style>
+	
+	<script type="text/javascript" async="" src="./Docker containers versus virtual machines_files/analytics.js.download"></script><script type="text/javascript" async="" src="./Docker containers versus virtual machines_files/linkid.js.download"></script><script type="text/javascript" async="" src="./Docker containers versus virtual machines_files/analytics.js.download"></script><script type="text/javascript" async="" src="./Docker containers versus virtual machines_files/gtm.js.download"></script><script id="pd-rating-js" src="./Docker containers versus virtual machines_files/rating.js.download"></script><script type="text/javascript" async="" src="./Docker containers versus virtual machines_files/analytics.min.js.download"></script><script type="text/javascript">
+	  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
+	  analytics.load("IWj9D0UpZHZdZUZX9jl98PcpBFWBnBMy");
+	  analytics.page();
+	  }}();
+	</script>
+	
+	<!-- favicon -->
+	<link rel="icon" type="image/x-icon" href="https://docs.docker.com/favicons/docs@2x.ico" sizes="129x128">
+	<meta name="msapplication-TileImage" content="/favicons/docs@2x.ico">
+	<link rel="apple-touch-icon" type="image/x-icon" href="https://docs.docker.com/favicons/docs@2x.ico" sizes="129x128">
+	<meta property="og:image" content="/favicons/docs@2x.ico">
+	<!-- metadata -->
+	<meta property="og:type" content="website">
+	<meta property="og:updated_time" itemprop="dateUpdated" content="2018-03-30T21:50:07+00:00">
+	<meta property="og:image" itemprop="image primaryImageOfPage" content="/images/docs@2x.png">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:domain" content="docs.docker.com">
+	<meta name="twitter:site" content="@docker_docs">
+	<meta name="twitter:url" content="https://twitter.com/docker_docs">
+	<meta name="twitter:title" itemprop="title name" content="Get Started, Part 1: Orientation and setup">
+	<meta name="twitter:description" property="og:description" itemprop="description" content="1: Orientation 2: Containers 3: Services 4: Swarms 5: Stacks 6: Deploy your app Welcome! We are excited that you want to learn Docker. The Docker Get Started Tutorial teaches...">
+	<meta name="twitter:image:src" content="/images/docs@2x.png">
+	<meta name="twitter:image:alt" content="Docker Documentation">
+	<meta property="article:published_time" itemprop="datePublished" content="2018-03-30T21:50:07+00:00">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="get started, setup, orientation, quickstart, intro, concepts, containers">
+	<link rel="stylesheet" href="./Docker containers versus virtual machines_files/font-awesome.min.css">
+	<link rel="stylesheet" href="./Docker containers versus virtual machines_files/bootstrap.min.css">
+	<link id="pygments" rel="stylesheet" href="./Docker containers versus virtual machines_files/perldoc.css">
+	<link id="pagestyle" rel="stylesheet" href="./Docker containers versus virtual machines_files/style.css">
+
+	<!-- Go get "Open Sans" font from Google -->
+	<link href="./Docker containers versus virtual machines_files/css" rel="stylesheet">
+	<!-- SEO stuff -->
+	<title>Get Started, Part 1: Orientation and setup | Docker Documentation</title>
+<meta property="og:title" content="Get Started, Part 1: Orientation and setup">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Get oriented on some basics of Docker before diving into the walkthrough.">
+<meta property="og:description" content="Get oriented on some basics of Docker before diving into the walkthrough.">
+<link rel="canonical" href="https://docs.docker.com/get-started/">
+<meta property="og:url" content="https://docs.docker.com/get-started/">
+<meta property="og:site_name" content="Docker Documentation">
+<script type="application/ld+json">
+{"@context":"http://schema.org","@type":"WebPage","headline":"Get Started, Part 1: Orientation and setup","description":"Get oriented on some basics of Docker before diving into the walkthrough.","url":"https://docs.docker.com/get-started/"}</script>
+	<!-- END SEO STUFF -->
+	
+	<script language="javascript">
+	// Default to assuming this is an archive and hiding some stuff
+	// See js/archive.js and js/docs.js for logic relating to this
+	var isArchive = true;
+	var dockerVersion = 'v18.03';
+	</script>
+<script charset="utf-8" src="./Docker containers versus virtual machines_files/rate.php"></script><script charset="utf-8" src="./Docker containers versus virtual machines_files/rating-results.php"></script><style type="text/css" id="pd_popup_holder_style_8453675">#pd_popup_holder_8453675 { position:absolute; display:none; width:175px; height:auto; top:0px; left:0px; z-index:10000; border:solid 1px #CCC; background-color:white; padding:0px 15px;font-family:Arial,Sans;box-shadow: -10px 10px 20px rgba(0, 0, 0, .5);-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25);-moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25); }</style></head>
+<body ng-app="Docker" ng-controller="DockerController" class="colums">
+	<header>
+		 <nav class="nav-secondary navbar navbar-fixed-top">
+    <!-- <div class="fan"></div> -->
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="https://docs.docker.com/"><img class="logo" src="./Docker containers versus virtual machines_files/docker-docs-logo.svg" alt="Docker Docs" title="Docker Docs"></a>
+        </div>
+        <div class="navbar-collapse" aria-expanded="false" style="height: 1px;">
+            <div class="search-form" id="search-div" style="visibility: visible;">
+    <form class="search-form form-inline ng-pristine ng-valid" id="searchForm" action="https://docs.docker.com/search/" style="visibility: visible;">
+        <input class="search-field form-control ds-input" id="st-search-input" value="" name="q" placeholder="Search the docs" type="search" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top;">
+        <div id="autocompleteContainer">
+            <div id="autocompleteResults"></div>
+        </div>
+        <!-- <button type="submit" class="search-submit btn btn-default">Search</button> -->
+    </form>
+</div>
+<div class="sidebar-toggle">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</div>
+<div class="nav-container">
+    <div id="tabs">
+        <ul class="tabs" id="jsTOCHorizontal"><li id="guides" class="active"><a href="https://docs.docker.com/">Guides</a></li>
+<li id="manuals"><a href="https://docs.docker.com/manuals/">Product manuals</a></li>
+<li id="glossary"><a href="https://docs.docker.com/glossary/">Glossary</a></li>
+<li id="reference"><a href="https://docs.docker.com/reference/">Reference</a></li>
+<li id="samples"><a href="https://docs.docker.com/samples/">Samples</a></li>
+</ul>
+    </div>
+    <div class="ctrl-right hidden-xs hidden-sm">
+        <a href="javascript:void(0)" id="menu-toggle"><i class="fa fa-indent" aria-hidden="true"></i></a>
+        <div class="btn-group" style="visibility: visible;">
+  <button type="button" class="btn btn-default dropdown-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Docker v18.03 (current)                 <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="https://docs.docker.com/edge/">Docker edge</a></li><li><a href="https://docs.docker.com/v17.12/">Docker v17.12</a></li><li><a href="https://docs.docker.com/v17.09/">Docker v17.09</a></li><li><a href="https://docs.docker.com/v17.06/">Docker v17.06</a></li><li><a href="https://docs.docker.com/v17.03/">Docker v17.03</a></li><li><a href="https://docs.docker.com/v1.13/">Docker v1.13</a></li><li><a href="https://docs.docker.com/v1.12/">Docker v1.12</a></li><li><a href="https://docs.docker.com/v1.11/">Docker v1.11</a></li><li><a href="https://docs.docker.com/v1.10/">Docker v1.10</a></li><li><a href="https://docs.docker.com/v1.9/">Docker v1.9</a></li><li><a href="https://docs.docker.com/v1.8/">Docker v1.8</a></li><li><a href="https://docs.docker.com/v1.7/">Docker v1.7</a></li><li><a href="https://docs.docker.com/v1.6/">Docker v1.6</a></li><li><a href="https://docs.docker.com/v1.5/">Docker v1.5</a></li><li><a href="https://docs.docker.com/v1.4/">Docker v1.4</a></li>
+  </ul>
+</div>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+</nav>
+	</header>
+
+	<div class="wrapper right-open">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-body">
+					<main class="col-content content">
+						<section class="section">
+							
+								
+							<h1 id="title">Get Started, Part 1: Orientation and setup</h1>  <span class="reading-time" title="Estimated reading time">
+  <span class="reading-time-label">Estimated reading time: </span>
+  
+  
+    4 minutes
+  
+</span>
+
+							
+							
+							<ul class="pagination">
+  <li class="active"><a href="https://docs.docker.com/get-started/part1">1: Orientation</a></li>
+  <li><a href="https://docs.docker.com/get-started/part2">2: Containers</a></li>
+  <li><a href="https://docs.docker.com/get-started/part3">3: Services</a></li>
+  <li><a href="https://docs.docker.com/get-started/part4">4: Swarms</a></li>
+  <li><a href="https://docs.docker.com/get-started/part5">5: Stacks</a></li>
+  <li><a href="https://docs.docker.com/get-started/part6">6: Deploy your app</a></li>
+</ul>
+
+<p>Welcome! We are excited that you want to learn Docker. The <em>Docker Get Started Tutorial</em>
+teaches you how to:</p>
+
+<ol>
+  <li>Set up your Docker environment (on this page)</li>
+  <li><a href="https://docs.docker.com/get-started/part2/">Build an image and run it as one container</a></li>
+  <li><a href="https://docs.docker.com/get-started/part3/">Scale your app to run multiple containers</a></li>
+  <li><a href="https://docs.docker.com/get-started/part4/">Distribute your app across a cluster</a></li>
+  <li><a href="https://docs.docker.com/get-started/part5/">Stack services by adding a backend database</a></li>
+  <li><a href="https://docs.docker.com/get-started/part6/">Deploy your app to production</a></li>
+</ol>
+
+<h2 id="docker-concepts">Docker concepts</h2>
+
+<p>Docker is a platform for developers and sysadmins to <strong>develop, deploy, and run</strong>
+applications with containers. The use of Linux containers to deploy applications
+is called <em>containerization</em>. Containers are not new, but their use for easily
+deploying applications is.</p>
+
+<p>Containerization is increasingly popular because containers are:</p>
+
+<ul>
+  <li>Flexible: Even the most complex applications can be containerized.</li>
+  <li>Lightweight: Containers leverage and share the host kernel.</li>
+  <li>Interchangeable: You can deploy updates and upgrades on-the-fly.</li>
+  <li>Portable: You can build locally, deploy to the cloud, and run anywhere.</li>
+  <li>Scalable: You can increase and automatically distribute container replicas.</li>
+  <li>Stackable: You can stack services vertically and on-the-fly.</li>
+</ul>
+
+<p><img src="./Docker containers versus virtual machines_files/laurel-docker-containers.png" alt="Containers are portable" width="300px"></p>
+
+<h3 id="images-and-containers">Images and containers</h3>
+
+<p>A container is launched by running an image. An <strong>image</strong> is an executable
+package that includes everything needed to run an application--the code, a
+runtime, libraries, environment variables, and configuration files.</p>
+
+<p>A <strong>container</strong> is a runtime instance of an image--what the image becomes in
+memory when executed (that is, an image with state, or a user process). You can
+see a list of your running containers with the command, <code class="highlighter-rouge">docker ps</code>, just as you
+would in Linux.</p>
+
+<h3 id="containers-and-virtual-machines">Containers and virtual machines</h3>
+
+<p>A <strong>container</strong> runs <em>natively</em> on Linux and shares the kernel of the host
+machine with other containers. It runs a discrete process, taking no more memory
+than any other executable, making it lightweight.</p>
+
+<p>By contrast, a <strong>virtual machine</strong> (VM) runs a full-blown “guest” operating
+system with <em>virtual</em> access to host resources through a hypervisor. In general,
+VMs provide an environment with more resources than most applications need.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="./Docker containers versus virtual machines_files/Container@2x.png" alt="Container stack example" width="300px"></td>
+      <td><img src="./Docker containers versus virtual machines_files/VM@2x.png" alt="Virtual machine stack example" width="300px"></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="prepare-your-docker-environment">Prepare your Docker environment</h2>
+
+<p>Install a <a href="https://docs.docker.com/engine/installation/#updates-and-patches" target="_blank" class="_">maintained version</a>
+of Docker Community Edition (CE) or Enterprise Edition (EE) on a
+<a href="https://docs.docker.com/engine/installation/#supported-platforms" target="_blank" class="_">supported platform</a>.</p>
+
+<blockquote>
+  <p>For full Kubernetes Integration</p>
+
+  <ul>
+    <li><a href="https://docs.docker.com/docker-for-mac/kubernetes/" target="_blank" class="_">Kubernetes on Docker for Mac</a>
+is available in <a href="https://docs.docker.com/docker-for-mac/edge-release-notes/#docker-community-edition-17120-ce-mac45-2018-01-05" target="_blank" class="_">17.12 Edge (mac45)</a> or
+<a href="https://docs.docker.com/docker-for-mac/release-notes/#docker-community-edition-17120-ce-mac46-2018-01-09" target="_blank" class="_">17.12 Stable (mac46)</a> and higher.</li>
+    <li><a href="https://docs.docker.com/docker-for-windows/kubernetes/" target="_blank" class="_">Kubernetes on Docker for Windows</a>
+is available in
+<a href="https://docs.docker.com/docker-for-windows/edge-release-notes/#docker-community-edition-18020-ce-rc1-win50-2018-01-26" target="_blank" class="_">18.02 Edge (win50)</a> and higher edge channels only.</li>
+  </ul>
+</blockquote>
+
+<p><a href="https://docs.docker.com/engine/installation/" class="button outline-btn">Install Docker</a></p>
+<div style="clear:left"></div>
+
+<h3 id="test-docker-version">Test Docker version</h3>
+
+<ol>
+  <li>
+    <p>Run <code class="highlighter-rouge">docker --version</code> and ensure that you have a supported version of Docker:</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nt">--version</span>
+
+Docker version 17.12.0-ce, build c97c6d6
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Run <code class="highlighter-rouge">docker info</code> or (<code class="highlighter-rouge">docker version</code> without <code class="highlighter-rouge">--</code>) to view even more details about your docker installation:</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker info
+
+Containers: 0
+ Running: 0
+ Paused: 0
+ Stopped: 0
+Images: 0
+Server Version: 17.12.0-ce
+Storage Driver: overlay2
+...
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<blockquote>
+  <p>To avoid permission errors (and the use of <code class="highlighter-rouge">sudo</code>), add your user to the <code class="highlighter-rouge">docker</code> group. <a href="https://docs.docker.com/engine/installation/linux/linux-postinstall/" target="_blank" class="_">Read more</a>.</p>
+</blockquote>
+
+<h3 id="test-docker-installation">Test Docker installation</h3>
+
+<ol>
+  <li>
+    <p>Test that your installation works by running the simple Docker image,
+<a href="https://hub.docker.com/_/hello-world/" target="_blank" class="_">hello-world</a>:</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run hello-world
+
+Unable to find image <span class="s1">'hello-world:latest'</span> locally
+latest: Pulling from library/hello-world
+ca4f61b1923c: Pull <span class="nb">complete
+</span>Digest: sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7
+Status: Downloaded newer image <span class="k">for </span>hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+...
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>List the <code class="highlighter-rouge">hello-world</code> image that was downloaded to your machine:</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker image <span class="nb">ls</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>List the <code class="highlighter-rouge">hello-world</code> container (spawned by the image) which exits after
+displaying its message. If it were still running, you would not need the <code class="highlighter-rouge">--all</code> option:</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker container <span class="nb">ls</span> <span class="nt">--all</span>
+
+CONTAINER ID     IMAGE           COMMAND      CREATED            STATUS
+54f4984ed6a8     hello-world     <span class="s2">"/hello"</span>     20 seconds ago     Exited <span class="o">(</span>0<span class="o">)</span> 19 seconds ago
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="recap-and-cheat-sheet">Recap and cheat sheet</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">## List Docker CLI commands</span>
+docker
+docker container <span class="nt">--help</span>
+
+<span class="c">## Display Docker version and info</span>
+docker <span class="nt">--version</span>
+docker version
+docker info
+
+<span class="c">## Execute Docker image</span>
+docker run hello-world
+
+<span class="c">## List Docker images</span>
+docker image <span class="nb">ls</span>
+
+<span class="c">## List Docker containers (running, all, all in quiet mode)</span>
+docker container <span class="nb">ls
+</span>docker container <span class="nb">ls</span> <span class="nt">--all</span>
+docker container <span class="nb">ls</span> <span class="nt">-aq</span>
+</code></pre></div></div>
+
+<h2 id="conclusion-of-part-one">Conclusion of part one</h2>
+
+<p>Containerization makes <a href="https://www.docker.com/use-cases/cicd" target="_blank" class="_">CI/CD</a> seamless. For example:</p>
+
+<ul>
+  <li>applications have no system dependencies</li>
+  <li>updates can be pushed to any part of a distributed application</li>
+  <li>resource density can be optimized.</li>
+</ul>
+
+<p>With Docker, scaling your application is a matter of spinning up new
+executables, not running heavy VM hosts.</p>
+
+<p><a href="https://docs.docker.com/get-started/part2/" class="button outline-btn" style="margin-bottom: 30px; margin-right: 100%">On to Part 2 &gt;&gt;</a></p>
+
+							
+							<!-- tags -->
+							
+							
+							
+							<span class="glyphicon glyphicon-tags" style="padding-right: 10px"></span><span style="vertical-align: 2px"><a href="https://docs.docker.com/glossary/?term=get%20started">get started</a>, <a href="https://docs.docker.com/glossary/?term=setup">setup</a>, <a href="https://docs.docker.com/glossary/?term=orientation">orientation</a>, <a href="https://docs.docker.com/glossary/?term=quickstart">quickstart</a>, <a href="https://docs.docker.com/glossary/?term=intro">intro</a>, <a href="https://docs.docker.com/glossary/?term=concepts">concepts</a>, <a href="https://docs.docker.com/glossary/?term=containers">containers</a></span>
+							
+							<!-- link corrections -->
+              <script language="JavaScript">
+							var x = document.links.length;
+							var baseHref = document.getElementsByTagName('base')[0].href
+							for (i = 0; i < x; i++) {
+							  var munged = false;
+							  var thisHREF = document.links[i].href;
+							  var originalURL = "/get-started/";
+							  if (thisHREF.indexOf(baseHref + "#") > -1) {
+							    // hash fix
+							    //console.log('BEFORE: base:',baseHref,'thisHREF:',thisHREF,'originalURL:',originalURL);
+							    thisHREF = originalURL + thisHREF.replace(baseHref, "");
+							    //console.log('AFTER: base:',baseHref,'thisHREF:',thisHREF,'originalURL:',originalURL);
+							  }
+							  if ((thisHREF.indexOf(window.location.hostname) > -1 || thisHREF.indexOf('http') == -1) && document.links[i].className.indexOf("nomunge") < 0) {
+							    munged = true;
+							    thisHREF = thisHREF.replace(".md", "/").replace("/index/", "/");
+							    document.links[i].setAttribute('href', thisHREF);
+							  }
+							}
+							</script>
+							
+						  <div id="ratings-div" style="color: rgb(185, 194, 204); text-align: center; margin-top: 150px; visibility: visible;">
+								<div id="pd_rating_holder_8453675" style="display: inline-block;"><div class="rating-msg" id="PDRTJS_8453675_msg" style="text-align: center; font:normal normal 12px/20px verdana; color: #333333;">Rate this page:</div><p style="padding: 0px; margin: 0px; clear: both;"></p><div class="rating-icons" id="pd_rate_8453675" style="float:left;"><div class="rating-nero-icon" onmouseout="PDRTJS_8453675.rebuild();" onclick="PDRTJS_8453675.rate(1);" onmouseover="PDRTJS_8453675.hover(1);" id="PDRTJS_8453675_nero_1" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(https://polldaddy.com/images/ratings/nero-hand-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_8453675_msg_1" style="text-align: center; font:normal normal 12px/20px verdana; color: #333333; float:left; padding: 0px 4px;">1102</div><div class="rating-nero-icon" onmouseout="PDRTJS_8453675.rebuild();" onclick="PDRTJS_8453675.rate(2);" onmouseover="PDRTJS_8453675.hover(2);" id="PDRTJS_8453675_nero_2" style="background-size: 32px 32px !important; cursor: pointer; width: 16px; height: 16px;  line-height: 16px; background: url(https://polldaddy.com/images/ratings/nero-hand-sml.png) bottom right; float: left; padding: 0px; margin: 0px; margin: 0px;">&nbsp;</div><div class="rating-nero-value" id="PDRTJS_8453675_msg_2" style="text-align: center; font:normal normal 12px/20px verdana; color: #333333; float:left; padding: 0px 4px;">145</div></div><span style="float:left;">&nbsp;</span><div id="rating_info_8453675" style="display:none;float:left;background:url(https://polldaddy.com/images/ratings/info.png) no-repeat 3px 2px;width:16px;height:16px;cursor:pointer; null " onclick="javascript:PDRTJS_8453675.togglePopup();return false;"><span style="display:none;">i</span></div><div class="pd_popup_holder" id="pd_popup_holder_8453675">&nbsp;</div></div>
+								<script type="text/javascript">
+									PDRTJS_settings_8453675 = {
+										"id": "8453675",
+										"unique_id": "get-started/index.md",
+										"title": "Get Started, Part 1: Orientation and setup",
+										"permalink": "https://github.com/docker/docker.github.io/blob/master/get-started/index.md"
+									};
+									(function(d, c, j) {
+										if (!document.getElementById(j)) {
+											var pd = d.createElement(c),
+												s;
+											pd.id = j;
+											pd.src = ('https:' == document.location.protocol) ? 'https://polldaddy.com/js/rating/rating.js' : 'http://i0.poll.fm/js/rating/rating.js';
+											s = document.getElementsByTagName(c)[0];
+											s.parentNode.insertBefore(pd, s);
+										}
+									}(document, 'script', 'pd-rating-js'));
+								</script>
+							</div>
+							
+						</section>
+					</main>
+					<nav class="col-nav">
+						<div id="sidebar-nav" class="sidebar hidden-sm hidden-xs">
+						<div id="navbar" class="nav-sidebar">
+    <ul class="nav" id="jsTOCLeftNav"><li><a onclick="navClicked(1)" data-target="#item1" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Get Docker<span class="caret arrow"></span></a><ul class="nav collapse" id="#item1" aria-expanded="false"><li><a href="https://docs.docker.com/install/">Install Docker</a></li><li><a onclick="navClicked(3)" data-target="#item3" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Docker EE<span class="caret arrow"></span></a><ul class="nav collapse" id="#item3" aria-expanded="false"><li><a href="https://docs.docker.com/install/windows/docker-ee/">Windows Server</a></li><li><a href="https://docs.docker.com/install/linux/docker-ee/ubuntu/">Ubuntu</a></li><li><a href="https://docs.docker.com/install/linux/docker-ee/rhel/">RHEL</a></li><li><a href="https://docs.docker.com/install/linux/docker-ee/centos/">CentOS</a></li><li><a href="https://docs.docker.com/install/linux/docker-ee/oracle/">Oracle Linux</a></li><li><a href="https://docs.docker.com/install/linux/docker-ee/suse/">SLES</a></li></ul></li><li><a onclick="navClicked(10)" data-target="#item10" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Docker CE<span class="caret arrow"></span></a><ul class="nav collapse" id="#item10" aria-expanded="false"><li><a href="https://docs.docker.com/docker-for-mac/install/">Mac</a></li><li><a href="https://docs.docker.com/docker-for-windows/install/">Windows</a></li><li><a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/">Ubuntu</a></li><li><a href="https://docs.docker.com/install/linux/docker-ce/debian/">Debian</a></li><li><a href="https://docs.docker.com/install/linux/docker-ce/centos/">CentOS</a></li><li><a href="https://docs.docker.com/install/linux/docker-ce/fedora/">Fedora</a></li><li><a href="https://docs.docker.com/install/linux/docker-ce/binaries/">Binaries</a></li></ul></li><li><a onclick="navClicked(18)" data-target="#item18" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Platforms supporting Docker EE and Docker CE<span class="caret arrow"></span></a><ul class="nav collapse" id="#item18" aria-expanded="false"><li><a href="https://docs.docker.com/install/linux/centos/">CentOS</a></li><li><a href="https://docs.docker.com/install/linux/ubuntu/">Ubuntu</a></li></ul></li><li><a href="https://docs.docker.com/install/linux/linux-postinstall/">Optional Linux post-installation steps</a></li><li><a onclick="navClicked(22)" data-target="#item22" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Docker Edge<span class="caret arrow"></span></a><ul class="nav collapse" id="#item22" aria-expanded="false"><li><a href="https://docs.docker.com/edge/">Overview</a></li><li><a href="https://docs.docker.com/edge/engine/reference/commandline/docker/">Docker Edge CLI reference</a></li></ul></li><li><a onclick="navClicked(25)" data-target="#item25" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Docker for IBM Cloud (Beta)<span class="caret arrow"></span></a><ul class="nav collapse" id="#item25" aria-expanded="false"><li><a href="https://docs.docker.com/docker-for-ibm-cloud/why/">Why Docker for IBM Cloud?</a></li><li><a href="https://docs.docker.com/docker-for-ibm-cloud/quickstart/">Quick start</a></li><li><a href="https://docs.docker.com/docker-for-ibm-cloud/">Setup &amp; prerequisites</a></li><li><a href="https://docs.docker.com/docker-for-ibm-cloud/administering-swarms/">Administer clusters</a></li><li><a href="https://docs.docker.com/docker-for-ibm-cloud/scaling/">Scale clusters</a></li><li><a href="https://docs.docker.com/docker-for-ibm-cloud/deploy/">Deploy apps</a></li><li><a href="https://docs.docker.com/docker-for-ibm-cloud/binding-services/">Bind IBM Cloud services</a></li><li><a onclick="navClicked(33)" data-target="#item33" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Use registry images in clusters<span class="caret arrow"></span></a><ul class="nav collapse" id="#item33" aria-expanded="false"><li><a href="https://docs.docker.com/docker-for-ibm-cloud/registry/">Registry overview</a></li><li><a href="https://docs.docker.com/docker-for-ibm-cloud/dtr-ibm-cos/">Set up DTR to use IBM Cloud Object Storage</a></li><li><a href="https://docs.docker.com/docker-for-ibm-cloud/ibm-registry/">Use images in IBM Cloud Container Registry</a></li></ul></li><li><a href="https://docs.docker.com/docker-for-ibm-cloud/persistent-data-volumes/">Save persistent data in storage volumes</a></li><li><a href="https://docs.docker.com/docker-for-ibm-cloud/load-balancer/">Use a load balancer</a></li><li><a href="https://docs.docker.com/docker-for-ibm-cloud/logging/">Send logging and metric data to IBM Cloud</a></li><li><a href="https://docs.docker.com/docker-for-ibm-cloud/cli-ref/">CLI reference for bx d4ic commands</a></li><li><a href="https://docs.docker.com/docker-for-ibm-cloud/faqs/">FAQs</a></li><li><a href="https://docs.docker.com/docker-for-ibm-cloud/opensource/">Open source licensing</a></li><li><a href="https://docs.docker.com/docker-for-ibm-cloud/release-notes/">Release notes</a></li></ul></li><li><a onclick="navClicked(44)" data-target="#item44" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Docker for AWS<span class="caret arrow"></span></a><ul class="nav collapse" id="#item44" aria-expanded="false"><li><a href="https://docs.docker.com/docker-for-aws/why/">Why Docker for AWS?</a></li><li><a href="https://docs.docker.com/docker-for-aws/">Setup &amp; prerequisites</a></li><li><a href="https://docs.docker.com/docker-for-aws/iam-permissions/">IAM permissions</a></li><li><a href="https://docs.docker.com/docker-for-aws/scaling/">Scaling</a></li><li><a href="https://docs.docker.com/docker-for-aws/upgrade/">Upgrading</a></li><li><a href="https://docs.docker.com/docker-for-aws/deploy/">Deploy your app</a></li><li><a href="https://docs.docker.com/docker-for-aws/persistent-data-volumes/">Persistent data volumes</a></li><li><a href="https://docs.docker.com/docker-for-aws/load-balancer/">Load balancer</a></li><li><a href="https://docs.docker.com/docker-for-aws/faqs/">FAQs</a></li><li><a href="https://docs.docker.com/docker-for-aws/opensource/">Open source licensing</a></li><li><a href="https://docs.docker.com/docker-for-aws/release-notes/">Release notes</a></li><li><a href="https://docs.docker.com/docker-for-aws/archive/">Template archive</a></li></ul></li><li><a onclick="navClicked(57)" data-target="#item57" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Docker for Azure<span class="caret arrow"></span></a><ul class="nav collapse" id="#item57" aria-expanded="false"><li><a href="https://docs.docker.com/docker-for-azure/why/">Why Docker for Azure?</a></li><li><a href="https://docs.docker.com/docker-for-azure/">Setup &amp; prerequisites</a></li><li><a href="https://docs.docker.com/docker-for-azure/upgrade/">Upgrading</a></li><li><a href="https://docs.docker.com/docker-for-azure/deploy/">Deploy your app</a></li><li><a href="https://docs.docker.com/docker-for-azure/persistent-data-volumes/">Persistent data volumes</a></li><li><a href="https://docs.docker.com/docker-for-azure/faqs/">FAQs</a></li><li><a href="https://docs.docker.com/docker-for-azure/opensource/">Open source licensing</a></li><li><a href="https://docs.docker.com/docker-for-azure/release-notes/">Release notes</a></li><li><a href="https://docs.docker.com/docker-for-azure/archive/">Template archive</a></li></ul></li><li><a onclick="navClicked(67)" data-target="#item67" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Docker Toolbox (legacy)<span class="caret arrow"></span></a><ul class="nav collapse" id="#item67" aria-expanded="false"><li><a href="https://docs.docker.com/toolbox/overview/">Toolbox overview</a></li><li><a href="https://docs.docker.com/toolbox/toolbox_install_mac/">Install Toolbox on Mac</a></li><li><a href="https://docs.docker.com/toolbox/toolbox_install_windows/">Install Toolbox on Windows</a></li><li><a onclick="navClicked(71)" data-target="#item71" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Kitematic<span class="caret arrow"></span></a><ul class="nav collapse" id="#item71" aria-expanded="false"><li><a href="https://docs.docker.com/kitematic/userguide/">Kitematic user guide: intro &amp; overview</a></li><li><a href="https://docs.docker.com/kitematic/nginx-web-server/">Set up an Nginx web server</a></li><li><a href="https://docs.docker.com/kitematic/minecraft-server/">Set up a Minecraft Server</a></li><li><a href="https://docs.docker.com/kitematic/rethinkdb-dev-database/">Creating a local RethinkDB database for development</a></li><li><a href="https://docs.docker.com/kitematic/faq/">Frequently asked questions</a></li><li><a href="https://docs.docker.com/kitematic/known-issues/">Known issues</a></li></ul></li><li><a href="https://docs.docker.com/toolbox/faqs/troubleshoot/">Troubleshooting</a></li></ul></li><li><a onclick="navClicked(79)" data-target="#item79" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Compatibility between Docker versions<span class="caret arrow"></span></a><ul class="nav collapse" id="#item79" aria-expanded="false"><li><a href="https://docs.docker.com/engine/migration/">Migrate to Docker 1.10</a></li><li><a href="https://docs.docker.com/engine/breaking_changes/">Breaking changes</a></li><li><a href="https://docs.docker.com/engine/deprecated/">Deprecated Docker features</a></li><li><a href="https://docs.docker.com/engine/faq/">FAQ</a></li></ul></li><li><a onclick="navClicked(84)" data-target="#item84" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Release notes<span class="caret arrow"></span></a><ul class="nav collapse" id="#item84" aria-expanded="false"><li><a href="https://docs.docker.com/enterprise/release-notes/">Docker EE</a></li><li><a href="https://docs.docker.com/release-notes/docker-ce/">Docker CE</a></li></ul></li></ul></li><li><a onclick="navClicked(87)" data-target="#item87" data-toggle="collapse" data-parent="#stacked-menu" aria-expanded="true">Get started<span class="caret arrow"></span></a><ul class="nav collapse in" id="#item87" aria-expanded="true"><li><a onclick="navClicked(88)" data-target="#item88" data-toggle="collapse" data-parent="#stacked-menu" aria-expanded="true">Get started with Docker<span class="caret arrow"></span></a><ul class="nav collapse in" id="#item88" aria-expanded="true"><li><a href="https://docs.docker.com/get-started/" class="active currentPage">Part 1: Orientation</a></li><li><a href="https://docs.docker.com/get-started/part2/">Part 2: Containers</a></li><li><a href="https://docs.docker.com/get-started/part3/">Part 3: Services</a></li><li><a href="https://docs.docker.com/get-started/part4/">Part 4: Swarms</a></li><li><a href="https://docs.docker.com/get-started/part5/">Part 5: Stacks</a></li><li><a href="https://docs.docker.com/get-started/part6/">Part 6: Deploy your app</a></li></ul></li><li><a href="https://docs.docker.com/engine/docker-overview/">Docker overview</a></li></ul></li><li><a onclick="navClicked(96)" data-target="#item96" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Develop with Docker<span class="caret arrow"></span></a><ul class="nav collapse" id="#item96" aria-expanded="false"><li><a onclick="navClicked(97)" data-target="#item97" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Develop your apps on Docker<span class="caret arrow"></span></a><ul class="nav collapse" id="#item97" aria-expanded="false"><li><a href="https://docs.docker.com/develop/">App development overview</a></li><li><a href="https://docs.docker.com/develop/dev-best-practices/">App development best practices</a></li><li><a onclick="navClicked(100)" data-target="#item100" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Develop images<span class="caret arrow"></span></a><ul class="nav collapse" id="#item100" aria-expanded="false"><li><a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/">Best practices for writing Dockerfiles</a></li><li><a href="https://docs.docker.com/develop/develop-images/baseimages/">Create a base image</a></li><li><a href="https://docs.docker.com/develop/develop-images/multistage-build/">Use multi-stage builds</a></li><li><a href="https://docs.docker.com/engine/reference/builder/">Dockerfile reference</a></li><li><a href="https://docs.docker.com/develop/develop-images/image_management/">Manage images</a></li></ul></li><li><a href="https://docs.docker.com/samples/">Docker app examples</a></li></ul></li><li><a onclick="navClicked(107)" data-target="#item107" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Develop using the Docker Engine SDKs and API<span class="caret arrow"></span></a><ul class="nav collapse" id="#item107" aria-expanded="false"><li><a href="https://docs.docker.com/develop/sdk/">Overview</a></li><li><a href="https://docs.docker.com/develop/sdk/examples/">SDK and API examples</a></li></ul></li></ul></li><li><a onclick="navClicked(110)" data-target="#item110" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Configure networking<span class="caret arrow"></span></a><ul class="nav collapse" id="#item110" aria-expanded="false"><li><a href="https://docs.docker.com/network/">Networking overview</a></li><li><a href="https://docs.docker.com/network/bridge/">Use bridge networks</a></li><li><a href="https://docs.docker.com/network/overlay/">Use overlay networks</a></li><li><a href="https://docs.docker.com/network/host/">Use host networking</a></li><li><a href="https://docs.docker.com/network/macvlan/">Use Macvlan networks</a></li><li><a href="https://docs.docker.com/network/none/">Disable networking for a container</a></li><li><a onclick="navClicked(117)" data-target="#item117" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Networking tutorials<span class="caret arrow"></span></a><ul class="nav collapse" id="#item117" aria-expanded="false"><li><a href="https://docs.docker.com/network/network-tutorial-standalone/">Bridge network tutorial</a></li><li><a href="https://docs.docker.com/network/network-tutorial-host/">Host networking tutorial</a></li><li><a href="https://docs.docker.com/network/network-tutorial-overlay/">Overlay networking tutorial</a></li><li><a href="https://docs.docker.com/network/network-tutorial-macvlan/">Macvlan network tutorial</a></li></ul></li><li><a onclick="navClicked(122)" data-target="#item122" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Configure the daemon and containers<span class="caret arrow"></span></a><ul class="nav collapse" id="#item122" aria-expanded="false"><li><a href="https://docs.docker.com/config/daemon/ipv6/">Configure the daemon for IPv6</a></li><li><a href="https://docs.docker.com/network/iptables/">Docker and iptables</a></li><li><a href="https://docs.docker.com/config/containers/container-networking/">Container networking</a></li><li><a href="https://docs.docker.com/network/proxy/">Configure Docker to use a proxy server</a></li></ul></li><li><a onclick="navClicked(127)" data-target="#item127" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Legacy networking content<span class="caret arrow"></span></a><ul class="nav collapse" id="#item127" aria-expanded="false"><li><a href="https://docs.docker.com/network/links/">(Legacy) Container links</a></li><li><a href="https://docs.docker.com/network/overlay-standalone.swarm/">Overlay networks for Swarm Classic</a></li></ul></li></ul></li><li><a onclick="navClicked(130)" data-target="#item130" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Manage application data<span class="caret arrow"></span></a><ul class="nav collapse" id="#item130" aria-expanded="false"><li><a href="https://docs.docker.com/storage/">Storage overview</a></li><li><a href="https://docs.docker.com/storage/volumes/">Volumes</a></li><li><a href="https://docs.docker.com/storage/bind-mounts/">Bind mounts</a></li><li><a href="https://docs.docker.com/storage/tmpfs/">tmpfs mounts</a></li><li><a href="https://docs.docker.com/storage/troubleshooting_volume_errors/">Troubleshoot volume problems</a></li><li><a onclick="navClicked(136)" data-target="#item136" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Store data within containers<span class="caret arrow"></span></a><ul class="nav collapse" id="#item136" aria-expanded="false"><li><a href="https://docs.docker.com/storage/storagedriver/">About storage drivers</a></li><li><a href="https://docs.docker.com/storage/storagedriver/select-storage-driver/">Select a storage driver</a></li><li><a href="https://docs.docker.com/storage/storagedriver/aufs-driver/">Use the AUFS storage driver</a></li><li><a href="https://docs.docker.com/storage/storagedriver/btrfs-driver/">Use the Btrfs storage driver</a></li><li><a href="https://docs.docker.com/storage/storagedriver/device-mapper-driver/">Use the Device mapper storage driver</a></li><li><a href="https://docs.docker.com/storage/storagedriver/overlayfs-driver/">Use the OverlayFS storage driver</a></li><li><a href="https://docs.docker.com/storage/storagedriver/zfs-driver/">Use the ZFS storage driver</a></li><li><a href="https://docs.docker.com/storage/storagedriver/vfs-driver/">Use the VFS storage driver</a></li></ul></li></ul></li><li><a onclick="navClicked(145)" data-target="#item145" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Run your app in production<span class="caret arrow"></span></a><ul class="nav collapse" id="#item145" aria-expanded="false"><li><a onclick="navClicked(146)" data-target="#item146" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Configure all objects<span class="caret arrow"></span></a><ul class="nav collapse" id="#item146" aria-expanded="false"><li><a href="https://docs.docker.com/config/labels-custom-metadata/">Apply custom metadata to objects</a></li><li><a href="https://docs.docker.com/config/pruning/">Prune unused objects</a></li><li><a href="https://docs.docker.com/config/formatting/">Format command and log output</a></li></ul></li><li><a onclick="navClicked(150)" data-target="#item150" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Configure the daemon<span class="caret arrow"></span></a><ul class="nav collapse" id="#item150" aria-expanded="false"><li><a href="https://docs.docker.com/config/daemon/">Configure and run Docker</a></li><li><a href="https://docs.docker.com/config/daemon/systemd/">Control Docker with systemd</a></li><li><a href="https://docs.docker.com/config/labels-custom-metadata/">Apply custom metadata to daemons</a></li><li><a href="https://docs.docker.com/config/containers/logging/configure/">Configuring default drivers</a></li><li><a href="https://docs.docker.com/config/thirdparty/prometheus/">Collect Docker metrics with Prometheus</a></li></ul></li><li><a onclick="navClicked(156)" data-target="#item156" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Configure containers<span class="caret arrow"></span></a><ul class="nav collapse" id="#item156" aria-expanded="false"><li><a href="https://docs.docker.com/config/containers/start-containers-automatically/">Start containers automatically</a></li><li><a href="https://docs.docker.com/config/containers/live-restore/">Keep containers alive during daemon downtime</a></li><li><a href="https://docs.docker.com/config/containers/multi-service_container/">Run multiple services in a container</a></li><li><a href="https://docs.docker.com/config/containers/runmetrics/">Container runtime metrics</a></li><li><a href="https://docs.docker.com/config/containers/resource_constraints/">Limit a container's resources</a></li><li><a href="https://docs.docker.com/config/labels-custom-metadata/">Apply custom metadata to containers</a></li><li><a href="https://docs.docker.com/config/pruning/">Prune unused containers</a></li><li><a onclick="navClicked(164)" data-target="#item164" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Logging<span class="caret arrow"></span></a><ul class="nav collapse" id="#item164" aria-expanded="false"><li><a href="https://docs.docker.com/config/containers/logging/">View a container's logs</a></li><li><a href="https://docs.docker.com/config/containers/logging/configure/">Configure logging drivers</a></li><li><a href="https://docs.docker.com/config/containers/logging/plugins/">Use a logging driver plugin</a></li><li><a href="https://docs.docker.com/config/containers/logging/log_tags/">Customize log driver output</a></li><li><a onclick="navClicked(169)" data-target="#item169" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Logging driver details<span class="caret arrow"></span></a><ul class="nav collapse" id="#item169" aria-expanded="false"><li><a href="https://docs.docker.com/config/containers/logging/logentries/">Logentries logging driver</a></li><li><a href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a></li><li><a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format (GELF) logging driver</a></li><li><a href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a></li><li><a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon CloudWatch logs logging driver</a></li><li><a href="https://docs.docker.com/config/containers/logging/etwlogs/">ETW logging driver</a></li><li><a href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a></li><li><a href="https://docs.docker.com/config/containers/logging/gcplogs/">Google Cloud logging driver</a></li><li><a href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a></li><li><a href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a></li></ul></li></ul></li><li><a href="https://docs.docker.com/registry/recipes/mirror/">Run a local registry mirror</a></li><li><a onclick="navClicked(181)" data-target="#item181" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Work with external tools<span class="caret arrow"></span></a><ul class="nav collapse" id="#item181" aria-expanded="false"><li><a href="https://docs.docker.com/config/thirdparty/dsc/">PowerShell DSC usage</a></li><li><a href="https://docs.docker.com/config/thirdparty/ansible/">Ansible</a></li><li><a href="https://docs.docker.com/config/thirdparty/chef/">Chef</a></li><li><a href="https://docs.docker.com/config/thirdparty/puppet/">Puppet</a></li><li><a href="https://docs.docker.com/config/thirdparty/ambassador_pattern_linking/">(Obsolete) Link via an ambassador container</a></li></ul></li><li><a onclick="navClicked(187)" data-target="#item187" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Security<span class="caret arrow"></span></a><ul class="nav collapse" id="#item187" aria-expanded="false"><li><a href="https://docs.docker.com/engine/security/security/">Docker security</a></li><li><a href="https://docs.docker.com/engine/security/non-events/">Docker security non-events</a></li><li><a href="https://docs.docker.com/engine/security/https/">Protect the Docker daemon socket</a></li><li><a href="https://docs.docker.com/engine/security/certificates/">Using certificates for repository client verification</a></li><li><a onclick="navClicked(192)" data-target="#item192" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Use trusted images<span class="caret arrow"></span></a><ul class="nav collapse" id="#item192" aria-expanded="false"><li><a href="https://docs.docker.com/engine/security/trust/content_trust/">Content trust in Docker</a></li><li><a href="https://docs.docker.com/engine/security/trust/trust_automation/">Automation with content trust</a></li><li><a href="https://docs.docker.com/engine/security/trust/trust_delegation/">Delegations for content trust</a></li><li><a href="https://docs.docker.com/engine/security/trust/deploying_notary/">Deploying Notary</a></li><li><a href="https://docs.docker.com/engine/security/trust/trust_key_mng/">Manage keys for content trust</a></li><li><a href="https://docs.docker.com/engine/security/trust/trust_sandbox/">Play in a content trust sandbox</a></li></ul></li><li><a href="https://docs.docker.com/engine/security/antivirus/">Antivirus software and Docker</a></li><li><a href="https://docs.docker.com/engine/security/apparmor/">AppArmor security profiles for Docker</a></li><li><a href="https://docs.docker.com/engine/security/seccomp/">Seccomp security profiles for Docker</a></li><li><a href="https://docs.docker.com/engine/security/userns-remap/">Isolate containers with a user namespace</a></li></ul></li><li><a onclick="navClicked(203)" data-target="#item203" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Scale your app<span class="caret arrow"></span></a><ul class="nav collapse" id="#item203" aria-expanded="false"><li><a href="https://docs.docker.com/engine/swarm/">Swarm mode overview</a></li><li><a href="https://docs.docker.com/engine/swarm/key-concepts/">Swarm mode key concepts</a></li><li><a onclick="navClicked(206)" data-target="#item206" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Get started with swarm mode<span class="caret arrow"></span></a><ul class="nav collapse" id="#item206" aria-expanded="false"><li><a href="https://docs.docker.com/engine/swarm/swarm-tutorial/">Set up for the tutorial</a></li><li><a href="https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/">Create a swarm</a></li><li><a href="https://docs.docker.com/engine/swarm/swarm-tutorial/add-nodes/">Add nodes to the swarm</a></li><li><a href="https://docs.docker.com/engine/swarm/swarm-tutorial/deploy-service/">Deploy a service</a></li><li><a href="https://docs.docker.com/engine/swarm/swarm-tutorial/inspect-service/">Inspect the service</a></li><li><a href="https://docs.docker.com/engine/swarm/swarm-tutorial/scale-service/">Scale the service</a></li><li><a href="https://docs.docker.com/engine/swarm/swarm-tutorial/delete-service/">Delete the service</a></li><li><a href="https://docs.docker.com/engine/swarm/swarm-tutorial/rolling-update/">Apply rolling updates</a></li><li><a href="https://docs.docker.com/engine/swarm/swarm-tutorial/drain-node/">Drain a node</a></li><li><a href="https://docs.docker.com/engine/swarm/ingress/">Use swarm mode routing mesh</a></li></ul></li><li><a onclick="navClicked(217)" data-target="#item217" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">How swarm mode works<span class="caret arrow"></span></a><ul class="nav collapse" id="#item217" aria-expanded="false"><li><a href="https://docs.docker.com/engine/swarm/how-swarm-mode-works/nodes/">How nodes work</a></li><li><a href="https://docs.docker.com/engine/swarm/how-swarm-mode-works/services/">How services work</a></li><li><a href="https://docs.docker.com/engine/swarm/how-swarm-mode-works/pki/">Manage swarm security with PKI</a></li><li><a href="https://docs.docker.com/engine/swarm/how-swarm-mode-works/swarm-task-states/">Swarm task states</a></li></ul></li><li><a href="https://docs.docker.com/engine/swarm/swarm-mode/">Run Docker in swarm mode</a></li><li><a href="https://docs.docker.com/engine/swarm/join-nodes/">Join nodes to a swarm</a></li><li><a href="https://docs.docker.com/engine/swarm/manage-nodes/">Manage nodes in a swarm</a></li><li><a href="https://docs.docker.com/engine/swarm/services/">Deploy services to a swarm</a></li><li><a href="https://docs.docker.com/engine/swarm/configs/">Store service configuration data</a></li><li><a href="https://docs.docker.com/engine/swarm/secrets/">Manage sensitive data with Docker secrets</a></li><li><a href="https://docs.docker.com/engine/swarm/swarm_manager_locking/">Lock your swarm</a></li><li><a href="https://docs.docker.com/engine/swarm/networking/">Manage swarm service networks</a></li><li><a href="https://docs.docker.com/engine/swarm/admin_guide/">Swarm administration guide</a></li><li><a href="https://docs.docker.com/engine/swarm/raft/">Raft consensus in swarm mode</a></li></ul></li><li><a onclick="navClicked(232)" data-target="#item232" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Extend Docker<span class="caret arrow"></span></a><ul class="nav collapse" id="#item232" aria-expanded="false"><li><a href="https://docs.docker.com/engine/extend/">Managed plugin system</a></li><li><a href="https://docs.docker.com/engine/extend/plugins_authorization/">Access authorization plugin</a></li><li><a href="https://docs.docker.com/engine/extend/legacy_plugins/">Extending Docker with plugins</a></li><li><a href="https://docs.docker.com/engine/extend/plugins_network/">Docker network driver plugins</a></li><li><a href="https://docs.docker.com/engine/extend/plugins_volume/">Volume plugins</a></li><li><a href="https://docs.docker.com/engine/extend/config/">Plugin configuration</a></li><li><a href="https://docs.docker.com/engine/extend/plugin_api/">Plugins API</a></li></ul></li></ul></li></ul></li><li><a onclick="navClicked(240)" data-target="#item240" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Standards and compliance<span class="caret arrow"></span></a><ul class="nav collapse" id="#item240" aria-expanded="false"><li><a href="https://docs.docker.com/compliance/">Docker standards and compliance</a></li><li><a onclick="navClicked(242)" data-target="#item242" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">NIST<span class="caret arrow"></span></a><ul class="nav collapse" id="#item242" aria-expanded="false"><li><a href="https://docs.docker.com/compliance/nist/800_53/">NIST SP 800-53</a></li><li><a href="https://docs.docker.com/compliance/nist/800_190/">NIST SP 800-190</a></li><li><a href="https://docs.docker.com/compliance/nist/nistir_8176/">NISTIR 8176</a></li><li><a href="https://docs.docker.com/compliance/nist/itl_october2017/">NIST ITL Bulletin October 2017</a></li></ul></li><li><a onclick="navClicked(247)" data-target="#item247" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">CIS Benchmarks<span class="caret arrow"></span></a><ul class="nav collapse" id="#item247" aria-expanded="false"><li><a href="https://docs.docker.com/compliance/cis/docker_ee/">Docker EE Benchmark</a></li><li><a href="https://docs.docker.com/compliance/cis/docker_ce/">Docker CE Benchmark</a></li><li><a href="https://docs.docker.com/compliance/cis/k8s/">Kubernetes Benchmark</a></li></ul></li><li><a href="https://docs.docker.com/compliance/fedramp/">FedRAMP</a></li></ul></li><li><a onclick="navClicked(252)" data-target="#item252" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Open source at Docker<span class="caret arrow"></span></a><ul class="nav collapse" id="#item252" aria-expanded="false"><li><a href="https://docs.docker.com/opensource/">Contribute to documentation</a></li><li><a href="https://docs.docker.com/opensource/ways/">Other ways to contribute</a></li></ul></li><li><a onclick="navClicked(255)" data-target="#item255" data-toggle="collapse" data-parent="#stacked-menu" class="collapsed" aria-expanded="false">Documentation archive<span class="caret arrow"></span></a><ul class="nav collapse" id="#item255" aria-expanded="false"><li><a href="https://docs.docker.com/docsarchive/">View the docs archives</a></li><li><a href="https://docs.docker.com/hackathon/">Docs hackathon results</a></li></ul></li></ul>
+</div>
+
+						</div>
+					</nav>
+					<div class="col-toc">
+							<div class="sidebar hidden-xs hidden-sm">
+							<div class="toc-nav">
+								<div class="feedback-links">
+									<ul>
+										
+										<li style="visibility: visible;"><a href="https://github.com/docker/docker.github.io/edit/master/get-started/index.md"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit this page</a></li>
+										<li><a href="https://github.com/docker/docker.github.io/issues/new?assignee=gbarr01&amp;body=File:%20[get-started/index.md](https://docs.docker.com/get-started/),%20CC%20@gbarr01" class="nomunge"><i class="fa fa-check" aria-hidden="true"></i> Request docs changes</a></li>
+										<li><a href="https://www.docker.com/docker-support-services"><i class="fa fa-question" aria-hidden="true"></i> Get support</a></li>
+										<!-- toggle mode -->
+										<li>
+											<div class="toggle-mode">
+												<div class="icon">
+													<i class="fa fa-sun-o" aria-hidden="true"></i>
+												</div>
+												<div class="toggle-switch">
+													<label class="switch">
+														<input type="checkbox" id="switch-style">
+														<div class="slider round"></div>
+												</label>
+												</div>
+												<div class="icon">
+													<i class="fa fa-moon-o" aria-hidden="true"></i>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								   
+									<div id="side-toc-title">On this page:</div>
+									
+<ul id="my_toc" class="inline_toc">
+  <li><a href="https://docs.docker.com/get-started/#docker-concepts" class="nomunge">Docker concepts</a>
+    <ul>
+      <li><a href="https://docs.docker.com/get-started/#images-and-containers" class="nomunge active">Images and containers</a></li>
+      <li><a href="https://docs.docker.com/get-started/#containers-and-virtual-machines" class="nomunge">Containers and virtual machines</a></li>
+    </ul>
+  </li>
+  <li><a href="https://docs.docker.com/get-started/#prepare-your-docker-environment" class="nomunge">Prepare your Docker environment</a>
+    <ul>
+      <li><a href="https://docs.docker.com/get-started/#test-docker-version" class="nomunge">Test Docker version</a></li>
+      <li><a href="https://docs.docker.com/get-started/#test-docker-installation" class="nomunge">Test Docker installation</a></li>
+    </ul>
+  </li>
+  <li><a href="https://docs.docker.com/get-started/#recap-and-cheat-sheet" class="nomunge">Recap and cheat sheet</a></li>
+  <li><a href="https://docs.docker.com/get-started/#conclusion-of-part-one" class="nomunge">Conclusion of part one</a></li>
+</ul>
+
+
+								</div>
+								
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	<footer class="footer">
+		  
+    <div class="container">
+        <div class="top_footer">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><a href="https://www.docker.com/what-docker">What is Docker</a></li>
+                        <li><a href="https://www.docker.com/what-container">What is a Container</a></li>
+                        <li><a href="https://www.docker.com/use-cases">Use Cases</a></li>
+                        <li><a href="https://www.docker.com/customers">Customers</a></li>
+                        <li><a href="https://www.docker.com/partners/partner-program">Partners</a></li>
+                        <li class="break"><a href="https://www.docker.com/industry-government">For Government</a></li>
+                        <li><a href="https://www.docker.com/company">About Docker</a></li>
+                        <li><a href="https://www.docker.com/company/management">Management</a></li>
+                        <li><a href="https://www.docker.com/company/news-and-press">Press &amp; News</a></li>
+                        <li><a href="https://www.docker.com/careers">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><a href="https://www.docker.com/products/overview">Product</a></li>
+                        <li><a href="https://www.docker.com/pricing">Pricing</a></li>
+                        <li><a href="https://www.docker.com/docker-community">Community Edition</a></li>
+                        <li class="break"><a href="https://www.docker.com/enterprise">Enterprise Edition </a></li>
+                        <li><a href="https://www.docker.com/products/docker-datacenter">Docker Datacenter</a></li>
+                        <li><a href="https://cloud.docker.com/">Docker Cloud</a></li>
+                        <li><a href="https://store.docker.com/">Docker Store</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><a href="https://docs.docker.com/">Documentation</a></li>
+                        <li><a href="https://www.docker.com/docker">Learn</a></li>
+                        <li><a href="https://blog.docker.com/" target="_blank">Blog</a></li>
+                        <li><a href="https://training.docker.com/" target="_blank">Training</a></li>
+                        <li><a href="https://www.docker.com/docker-support-services">Support</a></li>
+                        <li><a href="https://success.docker.com/kbase">Knowledge Base</a></li>
+                        <li><a href="https://www.docker.com/products/resources">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><a href="https://www.docker.com/docker-community">Community</a></li>
+                        <li><a href="https://www.docker.com/technologies/overview">Open Source</a></li>
+                        <li><a href="https://www.docker.com/community/events">Events</a></li>
+                        <li><a href="https://forums.docker.com/" target="_blank">Forums</a></li>
+                        <li><a href="https://www.docker.com/community/docker-captains">Docker Captains</a></li>
+                        <li><a href="https://www.docker.com/docker-community/scholarships">Scholarships</a></li>
+                        <li><a href="https://blog.docker.com/curated/">Community News</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <nav class="footer_sub_nav">
+                    <ul class="menu">
+                        <li><a href="http://status.docker.com/">Status</a></li>
+                        <li><a href="https://www.docker.com/docker-security">Security</a></li>
+                        <li><a href="https://www.docker.com/legal">Legal</a></li>
+                        <li><a href="https://www.docker.com/company/contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="bottom_footer">
+            <div class="footer-copyright col-xs-12 col-md-8">
+                <p class="copyright">
+                    Copyright © 2018 Docker Inc. All rights reserved. </p>
+            </div>
+            <div class="footer_social_nav">
+                <ul class="nav-social">
+                    <li class="fa fa-twitter"><a href="http://twitter.com/docker">Twitter</a></li>
+                    <li class="fa fa-youtube"><a href="http://www.youtube.com/user/dockerrun">Youtube</a></li>
+                    <li class="fa fa-google-plus"><a href="https://plus.google.com/u/0/communities/108146856671494713993">Google</a></li>
+                    <li class="fa fa-github"><a href="https://github.com/docker/docker">Github</a></li>
+                    <li class="fa fa-linkedin"><a href="https://www.linkedin.com/company/docker">Linkedin</a></li>
+                    <li class="fa fa-facebook"><a href="https://www.facebook.com/docker.run">Facebook</a></li>
+                    <li class="fa fa-reddit"><a href="http://www.reddit.com/r/docker">Reddit</a></li>
+                    <li class="fa fa-slideshare"><a href="http://www.slideshare.net/docker">Slideshare</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+	</footer>
+	<link rel="stylesheet" href="./Docker containers versus virtual machines_files/github.css">
+	
+	<!-- <script src="/js/anchorlinks.js"></script> -->
+	<script defer="" src="./Docker containers versus virtual machines_files/menu.js.download"></script>
+	<script src="./Docker containers versus virtual machines_files/jquery.js.download"></script>
+	<script src="./Docker containers versus virtual machines_files/bootstrap.min.js.download"></script>
+	<!-- Always include the archive.js, but it doesn't do much unless we are an archive -->
+	<script language="javascript">
+	// Default to assuming this is an archive and hiding some stuff
+	// See js/archive.js and js/docs.js for logic relating to this
+	var isArchive = true;
+	var dockerVersion = 'v18.03';
+	// In archives, we need to know the page root and we get it from JEKYLL_ENV in the jekyll build command
+	var jekyllEnv = 'development';
+	// If unset (in non-archive branches), defaults to "development". In that case, reset it to empty
+	if (jekyllEnv == 'development') {
+		jekyllEnv = '';
+	}
+	var pageURL = jekyllEnv + '/get-started/';
+	</script>
+	<script src="./Docker containers versus virtual machines_files/archive.js.download"></script>
+	<script src="./Docker containers versus virtual machines_files/stickyfill.min.js.download"></script>
+	<script defer="" src="./Docker containers versus virtual machines_files/metadata.js.download"></script>
+	<script src="./Docker containers versus virtual machines_files/glossary.js.download"></script>
+	<script src="./Docker containers versus virtual machines_files/collections_tocs.js.download"></script>
+	<script defer="" src="./Docker containers versus virtual machines_files/docs.js.download"></script>
+	<script defer="" src="./Docker containers versus virtual machines_files/toc.js.download"></script>
+	<script language="javascript">
+	jQuery(document).ready(function(){
+				hookupTOCEvents();
+			});
+	</script>
+
+
+
+</body></html>

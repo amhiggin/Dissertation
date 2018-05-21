@@ -362,9 +362,8 @@
 	\end{center}
 	\vspace{26mm}
 
-	I, the undersigned, declare that this work has not previously been submitted as an
-	exercise for a degree at this, or any other University, and that unless otherwise
-	stated, is my own work.
+	
+I, \thesisauthor, declare that the following dissertation, except where otherwise stated, is entirely my own work; that it has not previously been submitted as an exercise for a degree, either in Trinity College Dublin, or in any other University; and that the library may lend or copy it or any part thereof on request.
 
 	\vspace{26mm}
 	\thesissigline{\thesisauthor}
@@ -373,6 +372,32 @@
 	\end{spacing}
 	\newpage}}
 
+\newcommand{\thesissummarypage}{{
+	
+	\thispagestyle{empty}
+	\begin{spacing}{2}
+	\begin{center}
+		\section*{Summary}
+	\end{center}
+	\vspace{26mm}
+
+This research focused on understanding evolving threats to the security of systems which are becoming increasingly sophisticated. Organisations in 2018 are in desperate need of \textit{adaptive} threat detection capabilities to protect their systems, which are increasingly becoming more interconnected and consequently more exposed. The problem of interest is how effective threat intelligence mechanisms can be implemented to provide mitigations against such threats.
+
+To identify the area of research and approaches that were ultimately taken, an in-depth exploration of the current state of the art in cybersecurity, intrusion detection and the hosting of modern systems infrastructures was undertaken. This research identified a wealth of approaches taken in the past to implementing solutions driven by active network defence. However, these solutions were largely found to focus on prolonging attack sessions rather than providing practical, feasible solutions for deploying active network defence in these environments.
+
+The primary contribution of this research is the development of a containerised cyber-incident monitoring system. The novel component of this solution is a highly deployable pre-configured network of \textit{honeypots}, devices that are capable of providing active threat detection in IT infrastructures. Attack event data captured by these devices makes it possible to provide enhanced threat intelligence through visualisation and alert generation, enabling rapid response and meaningful deductions to be made. Additionally, the design of adaptive honeypots to improve threat detection was explored, with a focus on understanding the most enticing properties of victim systems. 
+
+This research has suffered from unanticipated setbacks which have limited the degree to which definitive conclusions can be drawn regarding enhanced adaptivity of honeypot design. However, the successful implementation of an end-to-end solution which provides concise descriptions of complex threat data, whilst also proposing a means of making active network defence feasible for organisations, is a valuable contribution to bringing active network defense into widespread use.
+
+
+
+
+
+
+%A summary of the methods used and the major findings of the dissertation must follow the declaration. It must not exceed two pages of typescript. The summary provides a synopsis of the dissertation and should state clearly the nature and scope of the research undertaken and the contribution made to knowledge of the subject treated. A brief statement of the methods of investigation where appropriate, an outline of the major divisions or principal arguments of the work and a summary of any conclusions reached should be included.
+
+	\end{spacing}
+	\newpage}}
 
 \newcommand{\thesispermissionpage}{{
 
@@ -411,7 +436,7 @@
       A \thesistype \ submitted to the \@universityname \\
       in fulfillment of the requirements for the degree of \\
       \thesisdegree \\ 
-      \vspace{26mm}
+      \vspace{13mm}
       %%sw \textbf{\thesistypetypesize \thesistype} \\
       %%sw Presented to the  \\
       %%sw \@universityname \\
@@ -420,6 +445,8 @@
       %%sw \textbf{\thesisdegreetypesize \thesisdegree} \\
       %%sw \vspace{26mm}
       %%sw \textbf{\Large \@universityname} \\[4mm]
+      Supervised by \thesissupervisor \\
+      \vspace{13mm}
       \thesismonth \ \thesisyear
     \end{center}
     \end{spacing}

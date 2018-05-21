@@ -1,0 +1,66 @@
+\chapter{Introduction}
+
+This research aims to demonstrate the potential of adaptive honeypot technology in emerging cybersecurity use-cases: In particular, in cyber-incident monitoring in critical service infrastructures which are increasingly becoming the targets of severe cyber attacks. 
+
+\textit{Section \ref{ProblemArea}} gives a high-level overview of the area in which this research is based, laying the foundations to highlight the importance of this research for effective cyber-incident monitoring systems. 
+
+\textit{Section \ref{ResearchObjectives}} outlines the objectives that were identified in this research, motivated by the challenges outlined in \textit{Section \ref{ProblemArea}}. These objectives include the development of a novel cyber incident monitoring system for effective intrusion detection, and a proposal for increased adaptivity of honeypots to enhance their threat detection capabilities. 
+
+\textit{Section \ref{ContributionsOfResearch}} gives a brief description of the contributions made by this research to the field of cyber security.
+
+\textit{Section \ref{ReportStructure}} provides an overview of the structure and contents of the remainder of this document.
+
+Finally, \textit{Section \ref{NoteOnSources}} provides a brief note regarding the sources cited in this document.
+
+
+\section{Problem Area} \label{ProblemArea}
+
+There are more systems and devices connected to the internet now than ever before as society's reliance on interconnected services continues to grow. These huge numbers of devices are increasingly being operated by individuals with limited technical knowledge, and even less awareness of threats to their security. With the scale of poorly configured security measures in systems expanding, the modern internet is an ideal playground for hackers - endless devices to be compromised, exploited and used for nefarious purposes.
+
+Critical service infrastructures are being heavily targeted in attacks, impacting upon thousands of people and having major consequences for the operation of organisations. There is a growing trend of these attacks being attributed to nation-states across the world: A recent example is from February 2018, where the Russian military were accused by multiple nations of being responsible for NotPetya, an attack that saw the entire Ukranian economy grind to a halt in June 2017. \cite{NCSCBlamesRussiaForWannacry} There is no doubt that the growing role of cyber attacks in global warfare and terrorism is cause for major concern, and the operators of critical infrastructures are facing increased uncertainty about the safety of their systems. 
+
+There is also a major shift in the hosting of these infrastructures, as organisations continue to migrate to outsourced infrastructure management solutions. The concept of decoupling services by deploying them as microservices has enhanced operational efficiency in organisations. How to translate workable security solutions into these deployments is still largely an unsolved problem however. With the rate of migration to these deployments growing steadily year-on-year, it is crucial that security catches up sooner rather than later.
+
+\section{Research Objectives} \label{ResearchObjectives}
+The research described in this document is motivated by the current state of interconnectivity, changing system infrastructures and global cyber warfare. In recognition of the gargantuan challenges being faced in an increasingly connected world, it is clear that there is a need to explore options to both deter and to more effectively defend against exploitation by malicious cyber-entities, whatever their motivations. Exploring technologies that \textit{can} actively defend systems against the perpetrators of these activities is key to addressing these challenges.
+
+This research explores an approach to providing practically feasible active defence for critical service infrastructures that are being targeted in ever-more sophisticated attacks, establishing that the use of containerisation and a centralised incident monitoring platform are ideal in achieving this objective. The novelty of this approach is primarily in the use of containers to host a honeynet, a fully-networked active defence system packaged as a single unit that can be automatically deployed within a matter of minutes. 
+
+Additionally, the design of adaptive honeypots\footnote{Adaptivity in this context should be interpreted as the ability of a honeypot to assist the attacker in believing that they have achieved their goals.} to improve threat detection in these systems is also explored, with a focus on understanding the most enticing properties of victim systems. Internet-of-Things botnets, a recent and evolving attack phenomenon, are targeted in the design of these honeypots as a topical and relevant use-case.
+
+With the evolution of new threats to the security of data and systems every day as technology continues to advance, proposing a novel and effective system to address the stated objectives is the central aim of this research.
+
+\section{Contributions} \label{ContributionsOfResearch}
+
+Though this research has been limited in its scope due to the time constraints associated with an 8-month Masters programme, it produced a containerised honeynet-driven incident monitor: An end-to-end system that can be efficiently employed as an active network defence measure to enable rapid response to security incidents. As an area which is still catching up with transformations in modern systems architectures, this proof-of-concept design demonstrates the feasibility of containerising security solutions to deploy at scale.
+
+
+
+
+
+\section{Report Structure and Contents} \label{ReportStructure}
+The remaining sections of this document are structured as follows.
+
+\textit{Chapter \ref{Chapter2}} is entitled \textit{State of the Art}. It provides an in-depth look at the state of the art in cybersecurity in 2018, giving particular attention to increased connectivity and the implications of this for critical service infrastructures. Intrusion detection techniques and their role in cyber-incident monitoring is explored, comparing and contrasting passive and active defence intrusion detection mechanisms. Modern infrastructure hosting solutions in widespread use by organisations today are discussed, with an analysis of what these can contribute to modern security applications. Finally, a number of projects closely related to the work carried out in this project are evaluated.
+
+\textit{Chapter \ref{Chapter3}} is entitled \textit{Problem Formulation}. It explores the formulation of the research objectives in the context of the major challenges identified in \textit{Chapter \ref{Chapter2}}, addressing them in the establishment of the proposed work for this research.
+
+\textit{Chapter \ref{Chapter4}} is entitled \textit{Design}. It describes the considerations and challenges involved in the initial design phases of the project, as well as the decisions that resulted from this process.
+
+\textit{Chapter \ref{Chapter5}} is entitled \textit{Implementation}. It details the implementation phase of the project, describing the steps involved in developing the various components of the system. A number of pivotal design decisions as the project evolved are also discussed before arriving at the final solution.
+
+\textit{Chapter \ref{Chapter6}} is entitled \textit{Evaluation}. It provides an evaluation of the implemented system as well as detailing the experiments that were carried out and the challenges faced in doing so. 
+
+Finally, \textit{Chapter \ref{Chapter7}} is entitled \textit{Conclusions and Future Work}. It gives some overall conclusions regarding the final solution, before exploring a some potential avenues for the continuation and enhancement of the work done in this project. It concludes with some final remarks and recommendations based on the research conducted.
+
+\section{A Note on Sources} \label{NoteOnSources}
+Research in the area of cyber security is interesting in that it relies heavily on current, up-to-date awareness of unfolding events. This often means that the sole reference resources from which information can be obtained about these events are not from academia, since academic research almost always lags behind the most current trends documented by the media, security companies and government bodies. 
+
+Many of the sources cited in this document are non-academic, and hence often not peer-reviewed by independent bodies. The greatest of care has been taken to select maximally reputable, objective and independent sources as reference material for the work.  However sources cited which do not originate from peer-reviewed publications should be carefully considered by the reader based on the potential for bias of any parties involved in the writing.
+
+All visual figures were generated as part of the writing of this document unless stated otherwise, in which case the original source is cited.
+
+%The importance of cyber-incident monitoring in light of recent major events is discussed, and the background to decisions made regarding the component concepts and technologies are outlined. % explores the formulation of the research problem. The importance of cyber-incident monitoring in light of recent major events is discussed, and the background to decisions made regarding the component concepts and technologies are outlined.
+%describes the considerations and challenges involved in the initial design phases of the project.
+ %details the implementation phases of the project, including a description of the steps taken to carry out the various phases. A number of pivotal design decisions as the project evolved are also discussed before arriving at the final solution.
+  %provides an evaluation of the resulting system, including a discussion of the design characteristics of the solution and some conclusions about the overall findings of the research.
