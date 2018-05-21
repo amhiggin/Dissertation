@@ -12,7 +12,7 @@
 %%% (2) If you modify this file, you MUST NOT use the original file name.
 %%%
 %%% This file contains a template that can be used with the package
-%%% utthesis.sty and LaTeX2e to produce a thesis that meets the requirements
+%%% utthesis.sty and LaTeX2e to produce a thesis that meets the requirements;
 %%% of the Graduate School of The University of Texas at Austin.
 %%%
 %%% All of the commands defined by utthesis.sty have default values (see
@@ -28,17 +28,24 @@
 %%% such as committee members, etc is not needed for TCD dissertations.
 
 \documentclass[a4paper, 12pt, oneside]{report}
+
 \usepackage {tcdthesis}             
 \usepackage{graphicx,color}
 \usepackage{anysize}
 \usepackage{amsmath}
+%\usepackage{natbib}
 \usepackage{caption}
 \usepackage{hyperref}
 \usepackage{listings}
+\usepackage{verbatim}
+\usepackage{acronym}
+\usepackage{lmodern}
+\usepackage{inputenc}
+\usepackage[official]{eurosym}
 \mastersthesis                     %% Uncomment one of these; if you don't
 %\phdthesis                         %% use either, the default is \phdthesis.
 
-\thesisdraft                       %% Uncomment this if you want a draft
+%\thesisdraft                       %% Uncomment this if you want a draft
                                      %% version; this will print a timestamp
                                      %% on each page of your thesis.
 
@@ -61,20 +68,10 @@
 \renewcommand{\thesismonth}{May}                %% Your month of graduation.
 \renewcommand{\thesisyear}{2018}                      %% Your year of graduation.
 %%sw \renewcommand{\thesistitle}{\large{General Title:} \\ \LARGE{Specific Title}}            
-\renewcommand{\thesistitle}{\LARGE{Design Characteristics of Honeypots - with an Aim to Study Botnets}}            %% The title of your thesis; use mixed-case.
-\renewcommand{\thesisauthorpreviousdegrees}{B.A., B.A.I.}  %% Your previous degrees, abbreviated; separate multiple degrees by commas.
-\renewcommand{\thesissupervisor}{Weber Stefan}      %% Your thesis supervisor; use mixed-case and don't use any titles or degrees.
-% \renewcommand{\thesiscosupervisor}{}                %% Your PhD. thesis co-supervisor; if any.
+\renewcommand{\thesistitle}{\LARGE{Adaptive Containerised Honeypots for Cyber-Incident Monitoring}}            %% The title of your thesis; use mixed-case.
+\renewcommand{\thesisauthorpreviousdegrees}{B.A.I.}  %% Your previous degrees, abbreviated; separate multiple degrees by commas.
+\renewcommand{\thesissupervisor}{Dr. Stefan Weber}      %% Your thesis supervisor; use mixed-case and don't use any titles or degrees.
 
-% \renewcommand{\thesiscommitteemembera}{}
-% \renewcommand{\thesiscommitteememberb}{}
-% \renewcommand{\thesiscommitteememberc}{}
-% \renewcommand{\thesiscommitteememberd}{}
-% \renewcommand{\thesiscommitteemembere}{}
-% \renewcommand{\thesiscommitteememberf}{}
-% \renewcommand{\thesiscommitteememberg}{}
-% \renewcommand{\thesiscommitteememberh}{}
-% \renewcommand{\thesiscommitteememberi}{}
 
 \renewcommand{\thesisauthoraddress}{Dublin, Ireland}
 
@@ -151,54 +148,76 @@
 
 \thesisdeclarationpage				  		%% Generate the declaration page.
 
-\thesispermissionpage				  		%% Generate the copyright permission page
+%\thesispermissionpage				  		%% Generate the copyright permission page
 
+\thesissummarypage
 %\thesisdedicationpage                      %% Generate the dedication page.
 
 \begin{thesisacknowledgments}               %% Use this to write your
 			                          		%% acknowledgments; it can be anything
-This research has been a significant undertaking that I could not have accomplished without the support and guidance of many individuals. 
+This research has been a significant undertaking that I could not have accomplished without the support and guidance of so many different people. 
 
-First and foremost my thanks must go to my supervisor Dr. Stefan Weber, who has consistently been patient and supportive of me through all the issues that I have encountered. His contribution and guidance have been absolutely exceptional.
+First and foremost my thanks goes to Dr. Stefan Weber, who has been an incredible support through all the trials and tribulations of this project. His insights, patience and guidance have been second-to-none.
 
 Special mentions go to Jason Flood of IBM Ireland, Michel Oosterhof of the Cowrie project, and Tony Winters of Optum Ireland who offered valuable insights and guidance on the way forward at various points during this research.
 
-Lastly and most importantly of all, to my loving family - Mom, Dad, Romy and Holly - and my partner Breandán. I could never accomplish any of this without you.
+I am incredibly fortunate to have a wonderful support network: To Tushti, Isla and {\'E}amon, thank you for listening to all of my ranting and raving and for being there to offer your advice, opinions and help with my issues (whether technical or motivational)!
 
+Lastly and most importantly of all, to my loving family - Mom, Dad, Romy and Holly - and my incredible partner Breand{\'a}n. You have invested so much in support of my dreams and aspirations, and I could never have accomplished any of this without you.
 \end{thesisacknowledgments}                 %% allowed in LaTeX2e par-mode.
 
-\begin{thesisabstract}
-	%% Write this last
+\null\vfill
+{\centering
+\parbox{\textwidth}{%
+   All warfare is based on deception. \\
+   Hence, when we are able to attack, we must seem unable; \\
+   When using our forces, we must appear inactive; \\
+   When we are near, we must make the enemy believe we are far away; \\
+   When far away, we must make him believe we are near.\par\bigskip
+   }
+  \raggedleft\Large{ - Sun Tzu, \textit{The Art of War}}\par%
+  }
+\vfill\vfill
 
+%% Adding subsections (using \paragraph and \subparagraph) - depth of 5 subsections
+\setcounter{secnumdepth}{5}
+%% Below command sets what maximum sub-level is shown in the table of contents
+\setcounter{tocdepth}{3}
+
+
+\begin{thesisabstract}
+  The Internet is becoming an increasingly hostile environment, and though the deployment of security technologies is steadily improving over time, there is a huge and increasing gap between current technological threats and the measures in place to mitigate them.
+    
+  This research has focused on providing enhanced security through incident-monitoring, devising a highly-deployable cyber-incident monitoring system to consolidate threat intelligence collected from a network of honeypots: An approach which promotes reactivity in the face of increased uncertainty about the nature of attacks, emphasising an active rather than passive approach to securing modern infrastructures which have seen an unprecedented growth in connectivity in critical services including health, transport and energy.
+
+In particular, much attention in this research has focused on how such a system can feasibly provide active network defence for organisations in a way that is both practical and usable to operate and maintain. The use of containers and Platform-as-a-Service solutions in the deployment of security applications is an area where there is huge potential in this regard.
+
+While research and industry projects have explored these uses of honeypots before including in the context of cyber-incident monitoring, this research distinguishes itself on the basis of providing a fully-networked system of honeypots packaged as a single deployable unit which can be hosted in Linux-based environments to provide active network defence in modern IT infrastructures. 
+
+Attention has also been given to the adaptation of honeypot design to more effectively entice attacks and hence provide improved threat detection, something for which limited conclusive research exists. The exponential increase in connectivity of systems which were traditionally isolated motivates the targeting of such designs at Internet-of-Things botnets, automated attackers whose activities are a growing threat to critical service infrastructures.
 \end{thesisabstract}
 
 \tableofcontents                            %% Generate table of contents.
 \listoftables                               %% Uncomment this to generate list of tables.
 \listoffigures                              %% Uncomment this to generate list of figures.
 
-\include{chapter1}                                
-\include{chapter2}                                
-\include{chapter3}
-\include{chapter4}
-\include{chapter5}
-\include{chapter6}
-\include{chapter7}
+\include{Chapters/chapter1}             %% INTRODUCTION                  
+\include{Chapters/chapter2}             %% STATE OF THE ART   
+\include{Chapters/chapter3}				%% PROBLEM FORMULATION
+\include{Chapters/chapter4}				%% DESIGN
+\include{Chapters/chapter5}				%% IMPLEMENTATION
+\include{Chapters/chapter6} 			%% EVALUATION
+\include{Chapters/chapter7}				%% CONCLUSION
 
-
-%%sw \addcontentsline {toc}{chapter}{Appendices}       %% Force Appendices to appear in contents
 \begin{appendix}
-\include{appendix1}
+\include{appendix1}						%% ABBREVIATIONS
 \end{appendix}
 
 
-\addcontentsline {toc}{chapter}{Bibliography}     %% Force Bibliography to appear in contents
-
-%%sw \begin{thebibliography}               %% Start your bibliography here; you can
-\bibliographystyle{apalike2}
-\bibliography{sample}                      %% also use the \bibliography command
-
-%%sw \input{biblio}
-%%sw \end{thebibliography}                 %% to generate your bibliography.
+%
+\bibliographystyle{ieeetr}
+\bibliography{dissertation}                      
+%\addcontentsline {toc}{chapter}{Bibliography}     %% Force Bibliography to appear in contents
 
 
 \end{document}                             %% END THE DOCUMENT
